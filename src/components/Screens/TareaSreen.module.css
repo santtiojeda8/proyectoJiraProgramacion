@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+  }
+  .sidebar {
+    width: 20%;
+  }
+  .content {
+    width: 70%;
+    height: 100vh;
+  }
+  

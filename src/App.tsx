@@ -1,12 +1,14 @@
 
 import './App.css'
-import { Header } from './components/UI/Header/Header'
+import { TareaScreen } from './components/Screens/TareaScreen'
+import { Header } from './components/ui/Header/Header'
+
 
 function App() {
 
   return (
     <>
-      <Header />
+      <TareaScreen />
     </>
   )
 }

@@ -1,0 +1,67 @@
+.containerTasks {
+    padding: 20px;
+    /* background-color: #ffffff;
+height: 100vh;
+width:100vw ;
+display: flex;
+flex-direction: column;
+gap: 1rem;
+padding: 1rem; */
+}
+
+.containerTittleBaklog {
+    /* display: flex;
+    margin-top: 2.5rem;
+    height: 3rem;
+    width: 3rem;
+    size: 30px; */
+}
+
+.containerTittleBaklog h2 {
+    margin-left: 20px;
+    font-family: "Kanit", sans-serif;
+    font-size: 40px;
+    /* font-size: xx-large; */
+
+
+}
+
+.TitleAndButtonTaskBacklog {
+    margin-top: 20px;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    size: 30px;
+
+    button {
+        font-size: 20px;
+        /* width: 120px;
+        height: 40px; */
+        border: none;
+        padding:  5px 20px;
+        background-color: #8A8BCE;
+        border-radius: 10px;
+        /* box-shadow: 3px 3px 5px #302f2f; */
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p{
+            margin-left: 10px;
+            svg{
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    h4 {
+        font-weight: normal;
+        font-family: "Kanit", sans-serif;
+        font-size: 30px;
+    }
+}
+
+.conteinerTaskBacklog {
+    display: flex;
+}
