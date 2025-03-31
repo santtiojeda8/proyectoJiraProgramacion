@@ -1,12 +1,11 @@
 export interface IBacklog {
-        tareas: ITarea[];
-    }
+  tareas: ITarea[];
+}
 
-export interface ITarea{
-        id: string
-       titulo: string 
-       descripcion: string
-       estado: string, 
-       fechaLimite: string
-
+export interface ITarea {
+  id: string;
+  titulo: string;
+  descripcion: string;
+  estado: string;
+  fechaLimite: string;
 }

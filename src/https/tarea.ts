@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ITarea } from "../../types/IBacklog";
+import { ITarea } from "../types/IBacklog";
 
 const API_URL = "http://localhost:3000/backlog";
 
