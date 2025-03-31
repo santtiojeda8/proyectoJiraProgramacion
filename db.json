@@ -4,16 +4,9 @@
       {
         "id": "dcec0ad4-31e0-4279-8ccf-72bd1f20b52d",
         "titulo": "Tarea backlog ",
-        "descripcion": "Descripcion tarea backlog",
-        "estado": "pendiente",
-        "fechaLimite": "2025-03-05"
-      },
-      {
-        "id": "dcec0ad4-31e0-4279-8ccf-72bd1f20b5",
-        "titulo": "Tarea backlog fdsfsd",
-        "descripcion": "Descripcion tarea backlog",
-        "estado": "pendiente",
-        "fechaLimite": "2025-03-06"
+        "descripcion": "Descripcion tarea backlog editada",
+        "estado": "Pendiente",
+        "fechaLimite": "2025-03-30"
       }
     ]
   },

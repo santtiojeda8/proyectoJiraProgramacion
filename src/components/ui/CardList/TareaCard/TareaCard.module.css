@@ -1,11 +1,13 @@
 .ContainerPrincipal{
-    display: flex;         /* Activa flexbox */
-  align-items: center;   /* Alinea los elementos verticalmente */
-  justify-content: space-between; /* Distribuye los elementos */
-  padding: 10px;
-  border: 1px solid #ccc;
+  display: flex;         /* Activa flexbox */
+  align-items: center; 
+  justify-content: space-around;  /* Alinea los elementos verticalmente */
+ 
+  padding: 20px;
+  /* margin-top: 20px; */
+  /* border: 1px solid #ccc; */
   border-radius: 8px;
-  background: #fff;
+  background: #D4EAF4;
   gap: 10px; 
 }
 .ContainerTittle{
@@ -16,7 +18,7 @@
     padding: 10px;
 }
 .ContainerButtonSprint{
-  margin-top: 20px;
+  /* margin-top: 20px; */
   display: flex;
   gap: 2rem;
   justify-content: space-between;
@@ -26,7 +28,7 @@
   font-size: 20px;
   /* width: 120px;
   height: 40px; */
-  border: none;
+  /* border: none; */
   padding:  5px 20px;
   background-color: #637794;
   border-radius: 10px;
@@ -37,14 +39,26 @@
   justify-content: center;
 }
 .buttonSprint{
-  color: #000000;
+  /* color: #000000; */
   font-size: 20px;
   /* width: 120px;
   height: 40px; */
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding:  5px 20px;
   background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.ContainerButtons{
+ /* background-color: blue; */
+ /* padding: 50px; */
+
+}
+
+button{
+  border: none;
+}
+p{
+  border: none;
 }

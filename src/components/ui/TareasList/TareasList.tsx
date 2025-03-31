@@ -4,6 +4,7 @@ import { tareaStore } from "../../../store/tareaStore";
 import { TareaCard } from "../CardList/TareaCard/TareaCard";
 import styles from "./TareasList.module.css";
 import { ITarea } from "../../../types/IBacklog";
+import { ModalCreateCard } from "../CardList/ModalCreateCard/ModalCreateCard";
 
 export const TareasList = () => {
   const { getTareas, tareas } = useTarea();
@@ -14,18 +15,15 @@ export const TareasList = () => {
     getTareas();
   }, []);
 
-  const [openModalTarea, setOpenModalTarea] = useState(false);
-
   const [openCreateTarea , setOpenCreateTarea] = useState(false)
 
   const handleOpenModalEdit = (tarea: ITarea) => {
     setTareaActiva(tarea);
-    setOpenModalTarea(true);
   };
 
-  const handleCloseModal = () => {
-    setOpenModalTarea(false);
-  };
+  const handleOpenCreateTarea = () => {
+    setOpenCreateTarea(true)
+  }
 
   return (
     <>
@@ -36,8 +34,8 @@ export const TareasList = () => {
         <div className={styles.conteinerTaskBacklog}>
           <div className={styles.TitleAndButtonTaskBacklog}>
             <h4>Tareas en el Backlog</h4>
-            <button>
-              Crear Tarea{" "}
+            <button onClick={handleOpenCreateTarea}>
+              Crear Tarea
               <p>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                   <path
@@ -58,8 +56,10 @@ export const TareasList = () => {
             <div>No hay tareas</div>
           )}
         </div>
+
       </div>
       {/* {openModalTarea&&<Modal handleCloseModal={handleCloseModal}/>} */}
+      {openCreateTarea && <ModalCreateCard/>}
     </>
   );
 };
