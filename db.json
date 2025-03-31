@@ -1,36 +1,4 @@
 {
-<<<<<<< HEAD
-    "backlog" : {
-        "tareas" : [
-            {
-                "id" : "",
-                "titulo" : "Tarea backlog",
-                "descripcion" : "Descripcion tarea backlog",
-                "estado" : "pendiente",
-                "fechaLimite" : "2025-03-05"
-            }
-        ]            
-    },
-    "sprintList" : {
-        "sprints" : [
-            {
-                "id" : "",
-                "fechaInicio" : "2025-03-04",
-                "fechaCierre" : "2025-03-11",
-                "nombre" : "Sprint 122" ,
-                "tareas" : [
-                    {
-                        "id" : "",
-                        "tituo" : "Tarea 2" ,
-                        "descripcion" : "Estamos aca",
-                        "estado" : "pendiente",
-                        "fechaLimite" : "2025-03-06"
-                    }
-                ]
-            }
-        ]
-    }
-=======
   "backlog": {
     "tareas": [
       {
@@ -42,7 +10,7 @@
       },
       {
         "id": "dcec0ad4-31e0-4279-8ccf-72bd1f20b5",
-        "titulo": "Tarea backlog",
+        "titulo": "Tarea backlog fdsfsd",
         "descripcion": "Descripcion tarea backlog",
         "estado": "pendiente",
         "fechaLimite": "2025-03-06"
@@ -68,5 +36,4 @@
       }
     ]
   }
->>>>>>> rama-Seba
 }
