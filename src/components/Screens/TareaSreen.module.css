@@ -9,3 +9,18 @@
     height: 100vh;
   }
   
+  @media (min-width: 768px) {
+    .container {
+      flex-direction: row; /* En pantallas grandes vuelve a su diseño original */
+    }
+  
+    .sidebar {
+      width: 20%;
+      height: 100vh;
+    }
+  
+    .content {
+      width: 70%;
+      height: 100vh;
+    }
+  }

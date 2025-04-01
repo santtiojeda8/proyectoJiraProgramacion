@@ -2,18 +2,18 @@
   "backlog": {
     "tareas": [
       {
-        "id": "fe7675a5-67d6-461c-a88a-a5200d859845",
-        "titulo": "Tarea de backlog",
-        "descripcion": "Descripcion de una tarea editada desde el HTML aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "id": "3313beee-48ac-4d05-95f1-1393fc3a751d",
+        "titulo": "pepito",
+        "descripcion": "pepito tiene hambre",
         "estado": "Finalizado",
-        "fechaLimite": "2025-02-28"
+        "fechaLimite": "2025-04-01"
       },
       {
-        "id": "86fe4cce-3d08-46f3-bf95-f15e062ded0b",
-        "titulo": "Tarea creada",
-        "descripcion": "Tarea creada desde el HTML ",
-        "estado": "Pendiente",
-        "fechaLimite": "2025-04-06"
+        "id": "8836b48a-1206-4733-a0ff-0d0511d85d2a",
+        "titulo": "iron man",
+        "descripcion": "iron man 2\n",
+        "estado": "Finalizado",
+        "fechaLimite": "2025-04-16"
       }
     ]
   },

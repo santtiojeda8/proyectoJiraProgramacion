@@ -1,0 +1,61 @@
+/* Fondo semitransparente */
+.popup_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Oscuro con transparencia */
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  /* Contenedor del modal */
+  .popup_content {
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: #D4EAF4; /* Blanco con ligera transparencia */
+    padding: 20px;
+    border-radius: 10px;
+    gap: 10px;
+    width: 50%;
+    max-width: 500px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Botón contenedor */
+  .buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    button{
+    color: white;
+    background-color: #8A8BCE;
+    }
+  }
+  
+  /* Botones */
+  button {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    /* background-color:#8A8BCE ; */
+    /* color: white; */
+  }
+  
+ 
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  textarea {
+    resize: vertical; /* Permite redimensionar solo en la dirección vertical */
+    min-height: 80px; /* Ajusta la altura mínima */
+    max-height: 200px; /* Evita que crezca demasiado */
+  }

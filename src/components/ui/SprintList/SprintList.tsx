@@ -28,7 +28,7 @@ export const SprintList = () => {
                 </div>
                 
             </div>
-            {openCreateSpring && <ModalCreateSprint></ModalCreateSprint>}
+            {/* {openCreateSpring && <ModalCreateSprint></ModalCreateSprint>} */}
         </div>
     )
 } 
