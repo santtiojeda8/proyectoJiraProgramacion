@@ -25,6 +25,10 @@ export const TareasList = () => {
     setOpenCreateTarea(true)
   }
 
+  const handleCloseModalCreate = () => {
+    setOpenCreateTarea(false)
+  }
+
   return (
     <>
       <div className={styles.containerTasks}>
@@ -56,10 +60,9 @@ export const TareasList = () => {
             <div>No hay tareas</div>
           )}
         </div>
-
       </div>
       {/* {openModalTarea&&<Modal handleCloseModal={handleCloseModal}/>} */}
-      {openCreateTarea && <ModalCreateCard/>}
+      {openCreateTarea && <ModalCreateCard handleCloseModalCreate={handleCloseModalCreate} />}
     </>
   );
 };

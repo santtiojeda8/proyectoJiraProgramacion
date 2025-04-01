@@ -2,11 +2,18 @@
   "backlog": {
     "tareas": [
       {
-        "id": "dcec0ad4-31e0-4279-8ccf-72bd1f20b52d",
-        "titulo": "Tarea backlog ",
-        "descripcion": "Descripcion tarea backlog editada",
+        "id": "fe7675a5-67d6-461c-a88a-a5200d859845",
+        "titulo": "Tarea de backlog",
+        "descripcion": "Descripcion de una tarea editada desde el HTML aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "estado": "Finalizado",
+        "fechaLimite": "2025-02-28"
+      },
+      {
+        "id": "86fe4cce-3d08-46f3-bf95-f15e062ded0b",
+        "titulo": "Tarea creada",
+        "descripcion": "Tarea creada desde el HTML ",
         "estado": "Pendiente",
-        "fechaLimite": "2025-03-30"
+        "fechaLimite": "2025-04-06"
       }
     ]
   },
