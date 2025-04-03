@@ -4,7 +4,7 @@
       {
         "id": "3313beee-48ac-4d05-95f1-1393fc3a751d",
         "titulo": "pepito",
-        "descripcion": "pepito tiene hambre",
+        "descripcion": "pepito tiene hambre y es pobre",
         "estado": "Finalizado",
         "fechaLimite": "2025-04-01"
       },
@@ -14,6 +14,13 @@
         "descripcion": "iron man 2\n",
         "estado": "Finalizado",
         "fechaLimite": "2025-04-16"
+      },
+      {
+        "id": "bc8fbb5c-746a-4f95-88e2-91ea8d891794",
+        "titulo": "Hulk",
+        "descripcion": "Huulk es de color verde",
+        "estado": "Finalizado",
+        "fechaLimite": "2025-05-10"
       }
     ]
   },
@@ -21,8 +28,8 @@
     "sprints": [
       {
         "id": "b0e3f34b-68c6-49eb-b059-ab251ed81629",
-        "fechaInicio": "2025-03-04",
-        "fechaCierre": "2025-03-11",
+        "fechaInicio": "2025-04-03",
+        "fechaCierre": "2025-04-30",
         "nombre": "Sprint 122",
         "tareas": [
           {
@@ -32,7 +39,29 @@
             "estado": "pendiente",
             "fechaLimite": "2025-03-06"
           }
-        ]
+        ],
+        "sprintEditado": {
+          "id": "b0e3f34b-68c6-49eb-b059-ab251ed81629",
+          "fechaInicio": "2025-03-04",
+          "fechaCierre": "2025-03-11",
+          "nombre": "Sprint 1222",
+          "tareas": [
+            {
+              "id": "50699dec-3d1a-45ff-a94d-82d416eac053",
+              "titulo": "Tarea 2",
+              "descripcion": "Estamos aca",
+              "estado": "pendiente",
+              "fechaLimite": "2025-03-06"
+            }
+          ]
+        }
+      },
+      {
+        "id": "45b2c5b6-6cc9-4409-9d42-36682d782632",
+        "fechaInicio": "2025-04-02",
+        "fechaCierre": "2025-04-24",
+        "nombre": "El hoy es lo importante",
+        "tareas": []
       }
     ]
   }

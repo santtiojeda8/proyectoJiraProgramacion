@@ -30,7 +30,7 @@ export const postNuevoSprint = async (nuevoSprint : ISprint): Promise<void> => {
     }
 }
 
-export const editTarea = async (idSprint : string , sprintEditado : Partial<ISprint>): Promise<void> => {
+export const editSprint = async (idSprint : string , sprintEditado : Partial<ISprint>): Promise<void> => {
 
     try {
         const response = await axios.get<{ sprints: ISprint[] }>(API_URL_SPRINT);

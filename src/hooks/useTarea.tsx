@@ -31,7 +31,7 @@ export const useTarea = () => {
     agregarNuevaTarea(nuevaTarea);
     try {
       await postNuevaTarea(nuevaTarea);
-      Swal.fire("Tarea creada exitosamente :)");
+      Swal.fire("Tarea creada exitosamente");
     } catch (error) {
       eliminarTareaArray(nuevaTarea.id!);
       console.error("Error al crear tarea:", error);
@@ -45,7 +45,7 @@ export const useTarea = () => {
 
     try {
       await editarTarea(tareaEditada.id, tareaEditada); // Se pasa el ID y los cambios
-      Swal.fire("Tarea editada exitosamente :)");
+      Swal.fire("Tarea editada exitosamente");
     } catch (error) {
       if (estadoPrevio) editarTareaArray(estadoPrevio);
       console.error("Error al editar tarea:", error);
@@ -70,7 +70,7 @@ export const useTarea = () => {
     eliminarTareaArray(idTarea);
     try {
       await eliminarTareaId(idTarea);
-      Swal.fire("Tarea eliminada exitosamente :)");
+      Swal.fire("Tarea eliminada exitosamente");
     } catch (error) {
       if (estadoPrevio) agregarNuevaTarea(estadoPrevio);
       console.error("Error al eliminar tarea:", error);

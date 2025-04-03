@@ -3,6 +3,7 @@ import { useTarea } from "../../../../hooks/useTarea";
 import { ITarea } from "../../../../types/IBacklog";
 import { generadorDeId } from "../../../../utils/generadorIds";
 import styles from "./ModalCreateCard.module.css";
+import Swal from "sweetalert2";
 
 type ICreateTarea = {
   handleCloseModalCreate: () => void;
@@ -26,6 +27,10 @@ export const ModalCreateCard: FC<ICreateTarea> = ({ handleCloseModalCreate }) =>
   };
 
   const handleSubmit = (e: FormEvent) => {
+    if(!formValues.descripcion.trim() || !formValues.titulo.trim() || !formValues.fechaLimite.trim()) {
+      Swal.fire("Rellene los campos con la infromación necesaria")
+      return
+    }
     e.preventDefault();
     crearTarea(formValues);
     handleCloseModalCreate();
@@ -36,23 +41,24 @@ export const ModalCreateCard: FC<ICreateTarea> = ({ handleCloseModalCreate }) =>
       {/* Contenedor del modal */}
       <form className={styles.popup_content} onClick={(e) => e.stopPropagation()}>
         <label>Ingrese título</label>
-        <input type="text" name="titulo" value={formValues.titulo} onChange={handleChange} />
+        <input type="text" name="titulo" value={formValues.titulo} onChange={handleChange} required/>
 
         <label>Ingrese descripción</label>
-        <textarea name="descripcion" value={formValues.descripcion} onChange={handleChange}></textarea>
+        <textarea name="descripcion" value={formValues.descripcion} onChange={handleChange} required></textarea>
 
         <label>Decida el estado de la tarea</label>
         <select name="estado" onChange={handleChange} value={formValues.estado} required>
           <option value="Pendiente">Pendiente</option>
+          <option value="En Proceso">En Proceso</option>
           <option value="Finalizado">Finalizado</option>
         </select>
 
         <label>Ingrese la fecha límite</label>
-        <input type="date" name="fechaLimite" value={formValues.fechaLimite} onChange={handleChange} />
+        <input type="date" name="fechaLimite" value={formValues.fechaLimite} onChange={handleChange} required/>
 
         <div className={styles.buttonContainer}>
-          <button type="button" onClick={handleCloseModalCreate}>Cerrar</button>
-          <button type="submit" onClick={handleSubmit}>Crear</button>
+          <button type="button" onClick={handleCloseModalCreate} className={styles.buttonClose}>Cerrar</button>
+          <button type="submit" onClick={handleSubmit} className={styles.buttonCreate}>Crear</button>
         </div>
       </form>
     </div>
