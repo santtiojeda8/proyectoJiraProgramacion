@@ -39,7 +39,7 @@ export const useSprints = () => {
     postNuevoSprint(nuevoSprint); //Hacemos post a la base de datos
 
     try {
-      await agregarNuevoSprint(nuevoSprint); //Actuializamos el estado
+      agregarNuevoSprint(nuevoSprint); //Actuializamos el estado
       Swal.fire("Sprint creada con éxito");
     } catch (error) {
       eliminarSprintsArray(nuevoSprint.id!);
@@ -51,13 +51,13 @@ export const useSprints = () => {
     const estadoPrevio = sprints.find((el) => el.id === sprintEditado.id);
     editSprint(sprintEditado.id, sprintEditado);
     try {
-      await editarSprintsArray( sprintEditado);
+       editarSprintsArray( sprintEditado);
       Swal.fire("Sprint editada con éxito");
     } catch (error) {
       if (estadoPrevio) editarSprintsArray(estadoPrevio);
       console.error("Error al editar sprint", error);
     }
-  };
+  }
 
   const eliminarSprint = async (idSprint: string) => {
     const estadoPrevio = sprints.find((el) => el.id === idSprint);
