@@ -1,7 +1,9 @@
 import axios from "axios";
 import { ITarea } from "../types/IBacklog";
+import {config} from "../config/config"
 
-const API_URL = "http://localhost:3000/backlog";
+const API_URL=config.PortBacklog
+
 
 // Obtener todas las tareas desde el backlog
 export const getAllTareas = async (): Promise<ITarea[]> => {

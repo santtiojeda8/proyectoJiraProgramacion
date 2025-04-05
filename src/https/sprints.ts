@@ -1,7 +1,8 @@
 import axios from 'axios'
 import { ISprint } from '../types/ISprints'
+import {config} from "../config/config"
 
-const API_URL_SPRINT = "http://localhost:3000/sprintList"
+const API_URL_SPRINT=config.PortSprintList
 
 
 export const getAllSprint = async (): Promise<ISprint[]> => {
