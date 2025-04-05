@@ -9,15 +9,16 @@ type ICreateTarea = {
   handleCloseModalCreate: () => void;
 };
 
-const initialValues = {
-  id: generadorDeId(),
-  titulo: "",
-  descripcion: "",
-  estado: "Pendiente",
-  fechaLimite: "",
-};
-
 export const ModalCreateCard: FC<ICreateTarea> = ({ handleCloseModalCreate }) => {
+
+  const initialValues = {
+    id: generadorDeId(),
+    titulo: "",
+    descripcion: "",
+    estado: "Pendiente",
+    fechaLimite: "",
+  };
+
   const { crearTarea } = useTarea();
   const [formValues, setFormValues] = useState<ITarea>(initialValues);
 

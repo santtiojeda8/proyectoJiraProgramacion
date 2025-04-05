@@ -8,17 +8,18 @@ type ICreateSprint = {
   handleCloseCreateSprint: () => void;
 };
 
-const initialValues = {
-  id: generadorDeId(),
-  fechaInicio: "",
-  fechaCierre: "",
-  nombre: "",
-  tareas: [],
-};
-
 export const ModalCreateSprint: FC<ICreateSprint> = ({
   handleCloseCreateSprint,
 }) => {
+
+  const initialValues = {
+    id: generadorDeId(),
+    fechaInicio: "",
+    fechaCierre: "",
+    nombre: "",
+    tareas: [],
+  };
+  
   const { crearSprint } = useSprints();
 
   const [formValues, setFormValues] = useState<ISprint>(initialValues);
