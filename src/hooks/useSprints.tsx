@@ -51,7 +51,7 @@ export const useSprints = () => {
     const estadoPrevio = sprints.find((el) => el.id === sprintEditado.id);
     editSprint(sprintEditado.id, sprintEditado);
     try {
-       editarSprintsArray( sprintEditado);
+      editarSprintsArray( sprintEditado);
       Swal.fire("Sprint editada con éxito");
     } catch (error) {
       if (estadoPrevio) editarSprintsArray(estadoPrevio);
