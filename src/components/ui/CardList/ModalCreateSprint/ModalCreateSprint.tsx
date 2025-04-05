@@ -2,7 +2,6 @@ import { ChangeEvent, FC, FormEvent, useState } from "react";
 import { useSprints } from "../../../../hooks/useSprints";
 import { ISprint } from "../../../../types/ISprints";
 import { generadorDeId } from "../../../../utils/generadorIds";
-import { sprintsStore } from "../../../../store/sprintsStore";
 import Swal from "sweetalert2";
 
 type ICreateSprint = {

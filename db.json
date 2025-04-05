@@ -11,8 +11,8 @@
       {
         "id": "8836b48a-1206-4733-a0ff-0d0511d85d2a",
         "titulo": "iron man",
-        "descripcion": "iron man 2\n",
-        "estado": "Finalizado",
+        "descripcion": "iron man 2",
+        "estado": "Pendiente",
         "fechaLimite": "2025-04-16"
       },
       {
@@ -21,46 +21,37 @@
         "descripcion": "Huulk es de color verde",
         "estado": "Finalizado",
         "fechaLimite": "2025-05-10"
+      },
+      {
+        "id": "96598139-936b-468c-833d-53a3f2b8992a",
+        "titulo": "sad",
+        "descripcion": "dasdassd",
+        "estado": "En Proceso",
+        "fechaLimite": "2025-04-26"
+      },
+      {
+        "id": "f47a5ab6-b35a-4691-9a5c-735de6b4d7ef",
+        "titulo": "Tarea backlog ",
+        "descripcion": "asdadsasdasd",
+        "estado": "Pendiente",
+        "fechaLimite": "2025-04-27"
       }
     ]
   },
   "sprintList": {
     "sprints": [
       {
-        "id": "b0e3f34b-68c6-49eb-b059-ab251ed81629",
-        "fechaInicio": "2025-04-03",
-        "fechaCierre": "2025-04-30",
-        "nombre": "Sprint 122",
-        "tareas": [
-          {
-            "id": "50699dec-3d1a-45ff-a94d-82d416eac053",
-            "titulo": "Tarea 2",
-            "descripcion": "Estamos aca",
-            "estado": "pendiente",
-            "fechaLimite": "2025-03-06"
-          }
-        ],
-        "sprintEditado": {
-          "id": "b0e3f34b-68c6-49eb-b059-ab251ed81629",
-          "fechaInicio": "2025-03-04",
-          "fechaCierre": "2025-03-11",
-          "nombre": "Sprint 1222",
-          "tareas": [
-            {
-              "id": "50699dec-3d1a-45ff-a94d-82d416eac053",
-              "titulo": "Tarea 2",
-              "descripcion": "Estamos aca",
-              "estado": "pendiente",
-              "fechaLimite": "2025-03-06"
-            }
-          ]
-        }
+        "id": "7685614b-ac0b-4846-8da6-4c2194536481",
+        "fechaInicio": "2025-04-06",
+        "fechaCierre": "2025-04-12",
+        "nombre": "asd",
+        "tareas": []
       },
       {
-        "id": "45b2c5b6-6cc9-4409-9d42-36682d782632",
-        "fechaInicio": "2025-04-02",
-        "fechaCierre": "2025-04-24",
-        "nombre": "El hoy es lo importante",
+        "id": "7685614b-ac0b-4846-8da6-4c2194536481",
+        "fechaInicio": "2025-04-18",
+        "fechaCierre": "2025-04-19",
+        "nombre": "asd",
         "tareas": []
       }
     ]

@@ -51,7 +51,7 @@ export const useSprints = () => {
     const estadoPrevio = sprints.find((el) => el.id === sprintEditado.id);
     editSprint(sprintEditado.id, sprintEditado);
     try {
-      await editarSprintsArray( sprintEditado);
+      editarSprintsArray( sprintEditado);
       Swal.fire("Sprint editada con éxito");
     } catch (error) {
       if (estadoPrevio) editarSprintsArray(estadoPrevio);
@@ -73,10 +73,10 @@ export const useSprints = () => {
 
     if (!confirm.isConfirmed) return;
 
-    eliminarSprintsArray(idSprint);
-
+    deleteSprintById(idSprint);
+    
     try {
-      await deleteSprintById(idSprint);
+      eliminarSprintsArray(idSprint);
       Swal.fire("Sprint eliminada exitosamente");
     } catch (error) {
       if (estadoPrevio) agregarNuevoSprint(estadoPrevio);

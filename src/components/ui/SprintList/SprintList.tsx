@@ -58,14 +58,11 @@ export const SprintList = () => {
         </div>
 
         <div>
-            {
-                sprints.length > 0 ? (
-                    sprints.map( (el) => (
-                        <SprintCard sprint={el}/>
-                    ))) : (
-                        <div>No hay Sprints Creados</div>
-                    ) 
-            }
+          {sprints.length > 0 ? (
+            sprints.map((el) => <SprintCard sprint={el} />)
+          ) : (
+            <div>No hay Sprints Creados</div>
+          )}
         </div>
 
         {openCreateSprint && (
