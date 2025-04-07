@@ -6,7 +6,6 @@ import styles from "./TareaSreen.module.css";
 export const TareaScreen = () => {
   return (
     <div>
-      <Header />
       <div className={styles.container}>
         <div className={styles.sidebar}>
           <SprintList />

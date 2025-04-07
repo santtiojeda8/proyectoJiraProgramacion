@@ -3,10 +3,12 @@ import styles from "./SprintList.module.css";
 import { ModalCreateSprint } from "../CardList/ModalCreateSprint/ModalCreateSprint";
 import { useSprints } from "../../../hooks/useSprints";
 import { SprintCard } from "../CardList/SprintCard/SprintCard";
+import { ISprint } from "../../../types/ISprints";
+import { useNavigate } from "react-router-dom";
 
 export const SprintList = () => {
   const { getSprints, sprints } = useSprints();
-
+  const navigate=useNavigate()
   const [openCreateSprint, setOpenCreateSprint] = useState(false);
 
   useEffect(() => {
@@ -25,7 +27,8 @@ export const SprintList = () => {
     <div className={styles.containerMain}>
       <div className={styles.containerTittleSprintList}>
         <div className={styles.titleandicon}>
-          <h2>Backlog</h2>
+          <h2  onClick={() => navigate('/TareaScreen')}
+      style={{ cursor: 'pointer', color: 'blue' }}>Backlog</h2>
           <p>
             <svg
               className={styles.book}
@@ -59,7 +62,7 @@ export const SprintList = () => {
 
         <div>
           {sprints.length > 0 ? (
-            sprints.map((el) => <SprintCard sprint={el} />)
+            sprints.map((el:ISprint) => <SprintCard key={el.id} sprint={el} />)
           ) : (
             <div>No hay Sprints Creados</div>
           )}

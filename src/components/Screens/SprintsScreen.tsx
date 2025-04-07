@@ -7,7 +7,6 @@ import styles from './SprintsScreen.module.css'
 export const SprintsScreen = () => {
   return (
     <div>
-      <Header />
       <div className={styles.container}>
         <div className={styles.sidebar}>
           <SprintList />

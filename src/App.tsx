@@ -1,16 +1,10 @@
-
-import './App.css'
-import { SprintsScreen } from './components/Screens/SprintsScreen'
-import { TareaScreen } from './components/Screens/TareaScreen'
+import {AppRouter} from "./routes/appRouter"
 
 
 function App() {
 
   return (
-    <>
-      <TareaScreen />
-      {/* <SprintsScreen /> */}
-    </>
+      <AppRouter/>
   )
 }
 

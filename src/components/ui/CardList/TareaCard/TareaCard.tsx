@@ -6,6 +6,7 @@ import { ModalEditCard } from "../ModalEditCard/ModalEditCard";
 import { useTarea } from "../../../../hooks/useTarea";
 import { FaEye, FaEdit, FaTrash } from "react-icons/fa"; // Importamos íconos de react-icons
 import { useSprints } from "../../../../hooks/useSprints";
+import { ISprint } from "../../../../types/ISprints";
 
 type ITareaCard = {
   tarea: ITarea;
@@ -44,8 +45,8 @@ export const TareaCard: FC<ITareaCard> = ({ tarea }) => {
               Seleccione un sprint
             </option>
             {sprints.length > 0 ? (
-              sprints.map((el) => (
-                <option value={el.nombre}>{el.nombre}</option>
+              sprints.map((el:ISprint) => (
+                <option key={el.id} value={el.nombre}>{el.nombre}</option>
               ))
             ) : (
               <option selected disabled>No hay sprints</option>
