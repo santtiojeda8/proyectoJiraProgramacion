@@ -1,14 +1,26 @@
+import { FC, useEffect } from "react";
+import { useSprints } from "../../../hooks/useSprints";
 import styles from "./Sprints.module.css";
+import { ISprint } from "../../../types/ISprints";
+import { useParams } from "react-router-dom";
 
-export const Sprints = () => {
+interface Params {
+  id?: string;
+}
 
-    
+export const Sprints: FC<Params> = () => {
+
+  const { id } = useParams<{ id?: string }>();
+
+  const { sprints } = useSprints();
+
+  const sprintSeleccionado = sprints.find( (el) => el.id ===id)
   return (
     <>
       <div className={styles.back}>
         <div className={styles.header}>
-          <h1>Nombre de la Sprint: </h1>
-          <h2>Tareas de la Srint</h2>
+          <h1>Nombre de la Sprint: {sprintSeleccionado?.nombre}</h1>
+          <h2>Tareas de la Sprint</h2>
           <button className={styles.create_task}>Crear Tarea</button>
         </div>
         <div className={styles.board}>

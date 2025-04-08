@@ -21,30 +21,23 @@
         "descripcion": "Paulo los estilos son mediocres hay que meterle mas onda, si nesecitas ayuda siempre tenes el grupo a disposicion ",
         "estado": "En Proceso",
         "fechaLimite": "2025-04-06"
-      },
-      {
-        "id": "df204fe4-924c-40d6-a7ac-4605420e4152",
-        "titulo": "d",
-        "descripcion": "dd",
-        "estado": "En Proceso",
-        "fechaLimite": "2025-04-18"
       }
     ]
   },
   "sprintList": {
     "sprints": [
       {
-        "id": "30de40c4-7476-413a-b443-ef701113a5e9",
-        "fechaInicio": "2025-04-19",
-        "fechaCierre": "2025-04-20",
-        "nombre": "c",
-        "tareas": []
-      },
-      {
         "id": "ee3f6edc-072b-4ec1-8be7-57ec92c94f33",
         "fechaInicio": "2025-04-06",
         "fechaCierre": "2025-04-13",
         "nombre": "Sprint 122",
+        "tareas": []
+      },
+      {
+        "id": "f0fcc38c-f3bb-430d-bd2a-9a055f981b3b",
+        "fechaInicio": "2025-04-09",
+        "fechaCierre": "2025-04-11",
+        "nombre": "BENDITO RUFIAN",
         "tareas": []
       }
     ]

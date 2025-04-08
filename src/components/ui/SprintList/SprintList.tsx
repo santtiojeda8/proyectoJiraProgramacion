@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 export const SprintList = () => {
   const { getSprints, sprints } = useSprints();
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const [openCreateSprint, setOpenCreateSprint] = useState(false);
 
   useEffect(() => {
@@ -22,13 +22,17 @@ export const SprintList = () => {
   const handleCloseCreateSprint = () => {
     setOpenCreateSprint(false);
   };
-
+  
   return (
     <div className={styles.containerMain}>
       <div className={styles.containerTittleSprintList}>
         <div className={styles.titleandicon}>
-          <h2  onClick={() => navigate('/TareaScreen')}
-      style={{ cursor: 'pointer', color: 'blue' }}>Backlog</h2>
+          <h2
+            onClick={ () => navigate('/TareaScreen') }
+            style={{ cursor: "pointer" }}
+          >
+            Backlog
+          </h2>
           <p>
             <svg
               className={styles.book}
@@ -62,7 +66,7 @@ export const SprintList = () => {
 
         <div>
           {sprints.length > 0 ? (
-            sprints.map((el:ISprint) => <SprintCard key={el.id} sprint={el} />)
+            sprints.map((el: ISprint) => <SprintCard key={el.id} sprint={el} />)
           ) : (
             <div>No hay Sprints Creados</div>
           )}
@@ -73,6 +77,7 @@ export const SprintList = () => {
             handleCloseCreateSprint={handleCloseCreateSprint}
           ></ModalCreateSprint>
         )}
+
       </div>
     </div>
   );

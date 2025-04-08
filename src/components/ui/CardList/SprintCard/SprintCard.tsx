@@ -6,11 +6,11 @@ import { ModalViewSprint } from "../ModalViewSprint/ModalViewSprint";
 import { useNavigate } from "react-router-dom";
 
 type ISprintCard = {
-  sprint: ISprint;
+  sprint: ISprint
 };
 
 export const SprintCard: FC<ISprintCard> = ({ sprint }) => {
-  const { eliminarSprint } = useSprints();
+  const { eliminarSprint} = useSprints();
   const navigate = useNavigate();
   const [openViewModal, setOpenViewModal] = useState(false);
   const [openEditModal, setOpenEditModal] = useState(false);
@@ -25,7 +25,7 @@ export const SprintCard: FC<ISprintCard> = ({ sprint }) => {
     <>
       <div>
         <div>
-          <h4>{sprint.nombre}</h4>
+          <h4 onClick={() => navigate(`/sprint/${sprint.id}`)} style={{ cursor: 'pointer'}}>{sprint.nombre}</h4>
         </div>
         <div>
           <p>Fecha de Inicio: {sprint.fechaInicio}</p>
