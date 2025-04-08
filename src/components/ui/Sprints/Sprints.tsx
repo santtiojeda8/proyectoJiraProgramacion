@@ -1,7 +1,6 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { useSprints } from "../../../hooks/useSprints";
 import styles from "./Sprints.module.css";
-import { ISprint } from "../../../types/ISprints";
 import { useParams } from "react-router-dom";
 
 interface Params {
