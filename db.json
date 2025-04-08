@@ -2,30 +2,43 @@
   "backlog": {
     "tareas": [
       {
-        "id": "dcec0ad4-31e0-4279-8ccf-72bd1f20b52d",
-        "titulo": "Tarea backlog ",
-        "descripcion": "Descripcion tarea backlog editada",
+        "id": "8836b48a-1206-4733-a0ff-0d0511d85d2a",
+        "titulo": "iron man",
+        "descripcion": "iron man 2",
         "estado": "Pendiente",
-        "fechaLimite": "2025-03-30"
+        "fechaLimite": "2025-04-16"
+      },
+      {
+        "id": "bc8fbb5c-746a-4f95-88e2-91ea8d891794",
+        "titulo": "Hulk",
+        "descripcion": "Huulk es de color verde",
+        "estado": "Finalizado",
+        "fechaLimite": "2025-05-10"
+      },
+      {
+        "id": "68eb881f-7445-4872-9f29-6c4c8cdeab9c",
+        "titulo": "Hacert estilos mas piola(Paulo)",
+        "descripcion": "Paulo los estilos son mediocres hay que meterle mas onda, si nesecitas ayuda siempre tenes el grupo a disposicion ",
+        "estado": "En Proceso",
+        "fechaLimite": "2025-04-06"
       }
     ]
   },
   "sprintList": {
     "sprints": [
       {
-        "id": "b0e3f34b-68c6-49eb-b059-ab251ed81629",
-        "fechaInicio": "2025-03-04",
-        "fechaCierre": "2025-03-11",
+        "id": "30de40c4-7476-413a-b443-ef701113a5e9",
+        "fechaInicio": "2025-04-19",
+        "fechaCierre": "2025-04-20",
+        "nombre": "c",
+        "tareas": []
+      },
+      {
+        "id": "ee3f6edc-072b-4ec1-8be7-57ec92c94f33",
+        "fechaInicio": "2025-04-06",
+        "fechaCierre": "2025-04-13",
         "nombre": "Sprint 122",
-        "tareas": [
-          {
-            "id": "50699dec-3d1a-45ff-a94d-82d416eac053",
-            "titulo": "Tarea 2",
-            "descripcion": "Estamos aca",
-            "estado": "pendiente",
-            "fechaLimite": "2025-03-06"
-          }
-        ]
+        "tareas": []
       }
     ]
   }

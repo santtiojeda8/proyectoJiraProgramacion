@@ -25,6 +25,10 @@ export const TareasList = () => {
     setOpenCreateTarea(true)
   }
 
+  const handleCloseModalCreate = () => {
+    setOpenCreateTarea(false)
+  }
+
   return (
     <>
       <div className={styles.containerTasks}>
@@ -50,16 +54,15 @@ export const TareasList = () => {
         <div className={styles.conatinerTareasCard}>
           {tareas.length > 0 ? (
             tareas.map((el) => (
-              <TareaCard handleOpenModalEdit={handleOpenModalEdit} tarea={el} />
+              <TareaCard tarea={el} />
             ))
           ) : (
             <div>No hay tareas</div>
           )}
         </div>
-
       </div>
       {/* {openModalTarea&&<Modal handleCloseModal={handleCloseModal}/>} */}
-      {openCreateTarea && <ModalCreateCard/>}
+      {openCreateTarea && <ModalCreateCard handleCloseModalCreate={handleCloseModalCreate} />}
     </>
   );
 };

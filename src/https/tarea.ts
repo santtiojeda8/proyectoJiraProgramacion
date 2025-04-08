@@ -1,6 +1,6 @@
 import axios from "axios";
 import { ITarea } from "../types/IBacklog";
-import {config} from "../../config/config.ts"
+import {config} from "../config/config"
 
 const API_URL_Tarea=config.PortBacklog
 

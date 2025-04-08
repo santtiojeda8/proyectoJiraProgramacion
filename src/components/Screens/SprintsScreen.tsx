@@ -1,9 +1,10 @@
 import { Header } from "../ui/Header/Header";
 import { SprintList } from "../ui/SprintList/SprintList";
-import { TareasList } from "../ui/TareasList/TareasList";
-import styles from "./TareaSreen.module.css";
+import { Sprints } from "../ui/Sprints/Sprints";
+import styles from './SprintsScreen.module.css'
 
-export const TareaScreen = () => {
+
+export const SprintsScreen = () => {
   return (
     <div>
       <div className={styles.container}>
@@ -11,7 +12,7 @@ export const TareaScreen = () => {
           <SprintList />
         </div>
         <div className={styles.content}>
-          <TareasList />
+            <Sprints />
         </div>
       </div>
     </div>
