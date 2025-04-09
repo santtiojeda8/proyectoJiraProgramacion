@@ -4,6 +4,8 @@ import { useSprints } from "../../../../hooks/useSprints";
 import { ModalEditSprint } from "../ModalEditSprint/ModalEditSprint";
 import { ModalViewSprint } from "../ModalViewSprint/ModalViewSprint";
 import { useNavigate } from "react-router-dom";
+import styles from "./SprintCard.module.css"
+import { FaEdit, FaEye, FaTrash } from "react-icons/fa";
 
 type ISprintCard = {
   sprint: ISprint;
@@ -23,19 +25,26 @@ export const SprintCard: FC<ISprintCard> = ({ sprint }) => {
 
   return (
     <>
-      <div>
+      <div className={styles.mainDev}>
         <div>
-          <h4>{sprint.nombre}</h4>
+          <h4>Titulo: {sprint.nombre}</h4>
         </div>
-        <div>
+        <div className={styles.fechas}>
           <p>Fecha de Inicio: {sprint.fechaInicio}</p>
           <p>Fecha de Cierre: {sprint.fechaCierre}</p>
         </div>
-        <div>
-          <button onClick={()=>navigate(`/sprint/${sprint.id}`)}>Ver</button>
-          <button onClick={handleOpenEditModal}>Editar</button>
-          <button onClick={handleDeleteSprint}>Eliminar</button>
+        <div className={styles.ContainerButtons}>
+          <button onClick={()=>navigate(`/sprint/${sprint.id}`)} className={styles.iconButton}>
+            <FaEye size={20} color="#8a8bce" />
+          </button>
+          <button onClick={handleOpenEditModal } className={styles.iconButton}>
+            <FaEdit size={20} color="#8a8bce" />
+          </button>
+          <button onClick={handleDeleteSprint} className={styles.iconButton}>
+            <FaTrash size={20} color="red" />
+          </button>
         </div>
+        
         {openViewModal && (
           <ModalViewSprint
             handleCloseViewModal={handleCloseViewModal}

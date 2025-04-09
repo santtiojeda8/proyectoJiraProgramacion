@@ -28,7 +28,7 @@ export const SprintList = () => {
       <div className={styles.containerTittleSprintList}>
         <div className={styles.titleandicon}>
           <h2  onClick={() => navigate('/TareaScreen')}
-      style={{ cursor: 'pointer', color: 'blue' }}>Backlog</h2>
+      style={{ cursor: 'pointer', color: 'white' }}>Backlog</h2>
           <p>
             <svg
               className={styles.book}
