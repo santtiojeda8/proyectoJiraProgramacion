@@ -1,70 +1,26 @@
-import { useParams } from "react-router-dom";
-import styles from "./Sprints.module.css";
+import { FC } from "react";
 import { useSprints } from "../../../hooks/useSprints";
-import { ISprint } from "../../../types/ISprints";
-import { useEffect, useState } from "react";
-import { ITarea } from "../../../types/IBacklog";
-import { tareaStore } from "../../../store/tareaStore";
-import { TareaCard } from "../CardList/TareaCard/TareaCard";
-import { ModalCreateCard } from "../CardList/ModalCreateCard/ModalCreateCard";
+import styles from "./Sprints.module.css";
+import { useParams } from "react-router-dom";
 
-export const Sprints = () => {
-  const { id } = useParams();
-  const { getSprints, sprints } = useSprints();
-  const [sprint, setSprint] = useState<ISprint | null>(null);
-  const [modalAbierto, setModalAbierto] = useState(false);
-  const [tareaSeleccionada, setTareaSeleccionada] = useState<ITarea | null>(
-    null
-  );
+interface Params {
+  id?: string;
+}
 
-  const handleOpenModalEdit = (tarea: ITarea) => {
-    setTareaSeleccionada(tarea); // ya no es necesario si usas el store
-    tareaStore.getState().setTareaActiva(tarea); // 👈 agregar esta línea
-    setModalAbierto(true);
-  };
+export const Sprints: FC<Params> = () => {
 
-  const handleCloseModal = () => {
-    setTareaSeleccionada(null);
-    setModalAbierto(false);
-  };
+  const { id } = useParams<{ id?: string }>();
 
-  const handleNuevaTarea = () => {
-    tareaStore.getState().setTareaActiva(null); // nueva tarea
-    setModalAbierto(true);
-  };
-  useEffect(() => {
-    if (sprints.length === 0) {
-      getSprints();
-    }
-  }, []);
+  const { sprints } = useSprints();
 
-  useEffect(() => {
-    const foundSprint = sprints.find((s) => s.id === id);
-    setSprint(foundSprint || null);
-  }, [sprints, id]);
-
-  if (!sprint) {
-    return <h2>Cargando o Sprint no encontrada...</h2>;
-  }
-  const tareasPendientes = sprint.tareas.filter(
-    (t) => t.estado === "Pendiente"
-  );
-  const tareasEnProgreso = sprint.tareas.filter(
-    (t) => t.estado === "En Proceso"
-  );
-  const tareasCompletadas = sprint.tareas.filter(
-    (t) => t.estado === "Finalizado"
-  );
-
+  const sprintSeleccionado = sprints.find( (el) => el.id ===id)
   return (
     <>
       <div className={styles.back}>
         <div className={styles.header}>
-          <h1>Nombre de la Sprint: {sprint.nombre} </h1>
-          <h2>Tareas de la Sprint:</h2>
-          <button className={styles.create_task} onClick={handleNuevaTarea}>
-            Crear Tarea
-          </button>
+          <h1>Nombre de la Sprint: {sprintSeleccionado?.nombre}</h1>
+          <h2>Tareas de la Sprint</h2>
+          <button className={styles.create_task}>Crear Tarea</button>
         </div>
         <div className={styles.board}>
           <div className={styles.column}>

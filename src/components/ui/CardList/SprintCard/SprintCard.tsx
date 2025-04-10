@@ -8,11 +8,11 @@ import styles from "./SprintCard.module.css"
 import { FaEdit, FaEye, FaTrash } from "react-icons/fa";
 
 type ISprintCard = {
-  sprint: ISprint;
+  sprint: ISprint
 };
 
 export const SprintCard: FC<ISprintCard> = ({ sprint }) => {
-  const { eliminarSprint } = useSprints();
+  const { eliminarSprint} = useSprints();
   const navigate = useNavigate();
   const [openViewModal, setOpenViewModal] = useState(false);
   const [openEditModal, setOpenEditModal] = useState(false);
@@ -27,7 +27,7 @@ export const SprintCard: FC<ISprintCard> = ({ sprint }) => {
     <>
       <div className={styles.mainDev}>
         <div>
-          <h4>Titulo: {sprint.nombre}</h4>
+          <h4 onClick={() => navigate(`/sprint/${sprint.id}`)} style={{ cursor: 'pointer'}}>{sprint.nombre}</h4>
         </div>
         <div className={styles.fechas}>
           <p>Fecha de Inicio: {sprint.fechaInicio}</p>
