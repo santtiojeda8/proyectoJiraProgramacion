@@ -1,4 +1,3 @@
-import { Header } from "../ui/Header/Header";
 import { SprintList } from "../ui/SprintList/SprintList";
 import { TareasList } from "../ui/TareasList/TareasList";
 import styles from "./TareaSreen.module.css";
