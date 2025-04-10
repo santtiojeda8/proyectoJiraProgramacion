@@ -34,12 +34,12 @@
     justify-content: space-between;
     margin-top: 10px;
     .buttonClose{
-      background-color: green;
+      background-color: red;
       color: white;
     }
     .buttonCreate{
       color: white;
-      background-color: red;
+      background-color: green;
     }
   }
   

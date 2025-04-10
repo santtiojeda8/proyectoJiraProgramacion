@@ -4,12 +4,14 @@ import { ITarea } from "../../../../types/IBacklog";
 import { generadorDeId } from "../../../../utils/generadorIds";
 import styles from "./ModalCreateCard.module.css";
 import Swal from "sweetalert2";
+import { useSprints } from "../../../../hooks/useSprints";
 
-type ICreateTarea = {
+type ICreateTarea = { 
   handleCloseModalCreate: () => void;
 };
 
-export const ModalCreateCard: FC<ICreateTarea> = ({ handleCloseModalCreate }) => {
+export const ModalCreateCard: FC<ICreateTarea> = ({ handleCloseModalCreate}) => {
+  
 
   const initialValues = {
     id: generadorDeId(),
@@ -21,6 +23,9 @@ export const ModalCreateCard: FC<ICreateTarea> = ({ handleCloseModalCreate }) =>
 
   const { crearTarea } = useTarea();
   const [formValues, setFormValues] = useState<ITarea>(initialValues);
+  const { agregarTareaASprint } = useSprints();
+
+  
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -28,12 +33,17 @@ export const ModalCreateCard: FC<ICreateTarea> = ({ handleCloseModalCreate }) =>
   };
 
   const handleSubmit = (e: FormEvent) => {
-    if(!formValues.descripcion.trim() || !formValues.titulo.trim() || !formValues.fechaLimite.trim()) {
-      Swal.fire("Rellene los campos con la infromación necesaria")
-      return
-    }
     e.preventDefault();
-    crearTarea(formValues);
+  
+    if (
+      !formValues.descripcion.trim() ||
+      !formValues.titulo.trim() ||
+      !formValues.fechaLimite.trim()
+    ) {
+      Swal.fire("Rellene los campos con la información necesaria");
+      return;
+    }
+    crearTarea(formValues)
     handleCloseModalCreate();
   };
 

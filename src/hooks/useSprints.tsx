@@ -8,8 +8,11 @@ import {
 } from "../https/sprints";
 import { ISprint } from "../types/ISprints";
 import Swal from "sweetalert2";
+import { ITarea } from "../types/IBacklog";
+import { tareaStore } from "../store/tareaStore";
 
 export const useSprints = () => {
+  const { eliminarTareaArray } = tareaStore.getState();
   const {
     sprints,
     setArraySprint,
@@ -25,7 +28,69 @@ export const useSprints = () => {
       eliminarSprintsArray: state.eliminarSprintsArray,
     }))
   );
-
+  const agregarTareaASprint = (idSprint: string, nuevaTarea: ITarea) => {
+    // Eliminar la tarea de cualquier sprint que ya la tenga
+    const sprintConTarea = sprints.find((sprint) =>
+      sprint.tareas.some((t) => t.id === nuevaTarea.id)
+    );
+  
+    if (sprintConTarea) {
+      const actualizado = {
+        ...sprintConTarea,
+        tareas: sprintConTarea.tareas.filter((t) => t.id !== nuevaTarea.id),
+      };
+      editarSprintsArray(actualizado);
+    }
+  
+    // Agregar la tarea al nuevo sprint
+    const sprintActualizado = sprints.find((s) => s.id === idSprint);
+  
+    if (!sprintActualizado) {
+      console.error("Sprint no encontrado");
+      return;
+    }
+  
+    const sprintConNuevaTarea: ISprint = {
+      ...sprintActualizado,
+      tareas: [...sprintActualizado.tareas, nuevaTarea],
+    };
+  
+    editarSprintsArray(sprintConNuevaTarea);
+  };
+  
+  const moverTareaASprint = async (tarea: ITarea, idSprint: string) => {
+    const sprintDestino = sprints.find((s) => s.id === idSprint);
+    if (!sprintDestino) {
+      console.error("Sprint no encontrado");
+      return;
+    }
+  
+    const yaExiste = sprintDestino.tareas.some((t) => t.id === tarea.id);
+    if (yaExiste) {
+      Swal.fire("Esta tarea ya está en el sprint seleccionado");
+      return;
+    }
+  
+    const sprintActualizado: ISprint = {
+      ...sprintDestino,
+      tareas: [...sprintDestino.tareas, tarea],
+    };
+  
+    try {
+      await editSprint(sprintActualizado.id, sprintActualizado);
+  
+      // Esta línea asegura que desaparece del backlog
+      eliminarTareaArray(tarea.id);
+  
+      // Esta actualiza el sprint en el store
+      editarSprintsArray(sprintActualizado);
+  
+      Swal.fire("Tarea movida correctamente");
+    } catch (error) {
+      console.error("Error al mover tarea al sprint", error);
+      Swal.fire("Error al mover tarea", "", "error");
+    }
+  };
   const getSprints = async () => {
     try {
       const data = await getAllSprint();
@@ -91,5 +156,7 @@ export const useSprints = () => {
     crearSprint,
     editarUnSprint,
     eliminarSprint,
+    agregarTareaASprint,
+    moverTareaASprint,
   };
 };

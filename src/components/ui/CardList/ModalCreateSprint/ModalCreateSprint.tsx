@@ -3,7 +3,7 @@ import { useSprints } from "../../../../hooks/useSprints";
 import { ISprint } from "../../../../types/ISprints";
 import { generadorDeId } from "../../../../utils/generadorIds";
 import Swal from "sweetalert2";
-
+import styles from "./ModalCreateSprint.module.css"
 type ICreateSprint = {
   handleCloseCreateSprint: () => void;
 };
@@ -47,10 +47,13 @@ export const ModalCreateSprint: FC<ICreateSprint> = ({
 
   return (
     <>
-      <div>
-        <form action="">
-          <div>
-            <label>Ingrese título</label>
+      <div className={styles.modalOverlay} onClick={handleCloseCreateSprint}>
+        <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+          <h3>Crear Sprint</h3>
+
+          <form className={styles.form} onSubmit={handleSubmit} action="">
+            
+          <label>Ingrese título</label>
             <input
               type="text"
               name="nombre"
@@ -61,14 +64,16 @@ export const ModalCreateSprint: FC<ICreateSprint> = ({
             <input type="date" name="fechaInicio" value={formValues.fechaInicio} onChange={handleChange}/>
             <label>Seleccione Fecha de Cierre</label>
             <input type="date" name="fechaCierre" value={formValues.fechaCierre} onChange={handleChange}/>
-          </div>
-
-          <div>
-            <button onClick={handleSubmit}>Crear</button>
-            <button onClick={handleCloseCreateSprint}>Cerrar</button>
-          </div>
-        </form>
+            
+            <div className={styles.buttonContainer}>
+              <button type="button" className={styles.cancelButton} onClick={handleCloseCreateSprint}>Cerrar</button>
+              <button type="submit" className={styles.submitButton} onClick={handleSubmit}>Crear</button>
+            </div>
+          </form>
+        </div>
       </div>
+
+     
     </>
   );
 };
