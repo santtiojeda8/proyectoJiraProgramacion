@@ -33,6 +33,8 @@ export const SprintList = () => {
           >
             Backlog
           </h2>
+          <h2  onClick={() => navigate('/TareaScreen')}
+      style={{ cursor: 'pointer', color: 'white' }}>Backlog</h2>
           <p>
             <svg
               className={styles.book}
