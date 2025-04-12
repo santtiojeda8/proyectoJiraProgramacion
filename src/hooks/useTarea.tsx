@@ -77,11 +77,27 @@ export const useTarea = () => {
     }
   };
 
+
+  const borrarTareaSprint = async (idTarea: string) => {
+    const estadoPrevio = tareas.find((el) => el.id === idTarea);
+
+    eliminarTareaArray(idTarea);
+    try {
+      await eliminarTareaId(idTarea);
+      Swal.fire("Tarea eliminada exitosamente");
+    } catch (error) {
+      if (estadoPrevio) agregarNuevaTarea(estadoPrevio);
+      console.error("Error al eliminar tarea:", error);
+    }
+  };
+
+
   return {
     getTareas,
     crearTarea,
     edicionTarea,
     borrarTarea,
-    tareas
+    tareas,
+    borrarTareaSprint
   };
 };

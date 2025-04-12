@@ -14,7 +14,7 @@ type ITareaCard = {
 };
 
 export const TareaCard: FC<ITareaCard> = ({ tarea }) => {
-  const { borrarTarea } = useTarea();
+  const { borrarTarea ,borrarTareaSprint } = useTarea();
   const { getSprints, sprints, moverTareaASprint } = useSprints();
 
   const [selectedSprint, setSelectedSprint] = useState<string>("default");
@@ -30,6 +30,7 @@ export const TareaCard: FC<ITareaCard> = ({ tarea }) => {
   const handleOpenModalEdit = () => setOpenEditModal(true);
   const handleCloseEditModal = () => setOpenEditModal(false);
   const handleDeleteTarea = () => borrarTarea(tarea.id);
+  const handleDeleteTareaSprint = () => borrarTareaSprint(tarea.id);
 
   const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setSelectedSprint(e.target.value);
@@ -51,11 +52,12 @@ export const TareaCard: FC<ITareaCard> = ({ tarea }) => {
       return;
     }
 
+    handleDeleteTareaSprint()
     moverTareaASprint(tarea, selectedSprint)
-    handleDeleteTarea()
     Swal.fire("Tarea enviada correctamente al sprint");
     setSelectedSprint("default"); // Reiniciamos el select
   };
+
 
   return (
     <>

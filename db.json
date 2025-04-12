@@ -2,11 +2,11 @@
   "backlog": {
     "tareas": [
       {
-        "id": "bc8fbb5c-746a-4f95-88e2-91ea8d891794",
-        "titulo": "Hulk",
-        "descripcion": "Huulk es de color verd",
+        "id": "3d146083-ca4c-44a9-a582-58c62617b8fc",
+        "titulo": "fsdfdssdfsfsdfsdfdsfsdfd",
+        "descripcion": "sdf",
         "estado": "Finalizado",
-        "fechaLimite": "2025-05-10"
+        "fechaLimite": "2025-04-25"
       }
     ]
   },
@@ -17,14 +17,72 @@
         "fechaInicio": "2025-04-06",
         "fechaCierre": "2025-04-13",
         "nombre": "Sprint 122",
-        "tareas": []
+        "tareas": [
+          {
+            "id": "bc8fbb5c-746a-4f95-88e2-91ea8d891794",
+            "titulo": "Hulk",
+            "descripcion": "Huulk es de color verd",
+            "estado": "Finalizado",
+            "fechaLimite": "2025-05-10"
+          },
+          {
+            "id": "188d96d9-4710-4a1e-a22d-1c482981ddc4",
+            "titulo": "asdasd",
+            "descripcion": "sdadda",
+            "estado": "En Proceso",
+            "fechaLimite": "2025-04-12"
+          },
+          {
+            "id": "b6577ba8-487a-4025-906c-a6df7ee227ef",
+            "titulo": "Aplicar CSS",
+            "descripcion": "Paulo, apolica css a las card",
+            "estado": "Pendiente",
+            "fechaLimite": "2025-04-24"
+          },
+          {
+            "id": "250c481c-db9b-43f3-8ed5-953e44d89927",
+            "titulo": "fafdsfas",
+            "descripcion": "fdasasffafadffaf",
+            "estado": "Finalizado",
+            "fechaLimite": "2025-04-13"
+          },
+          {
+            "id": "04539d66-d1a3-46f7-a350-8b4fb6e9998d",
+            "titulo": "seba raton",
+            "descripcion": "rpagate una coca",
+            "estado": "Pendiente",
+            "fechaLimite": "2025-04-13"
+          }
+        ]
       },
       {
         "id": "f0fcc38c-f3bb-430d-bd2a-9a055f981b3b",
         "fechaInicio": "2025-04-09",
         "fechaCierre": "2025-04-11",
         "nombre": "BENDITO RUFIAN",
-        "tareas": []
+        "tareas": [
+          {
+            "id": "acc2a0f3-8833-41fe-91b2-ddbb308414dd",
+            "titulo": "Iron Man",
+            "descripcion": "Irona Man es de carton",
+            "estado": "Pendiente",
+            "fechaLimite": "2025-04-05"
+          },
+          {
+            "id": "3d146083-ca4c-44a9-a582-58c62617b8fc",
+            "titulo": "fsdfdssdfsfsdfsdfdsfsdfd",
+            "descripcion": "sdf",
+            "estado": "Finalizado",
+            "fechaLimite": "2025-04-25"
+          },
+          {
+            "id": "2eda6b55-4aa2-4316-beb2-9450bbde3bdc",
+            "titulo": "s",
+            "descripcion": "s",
+            "estado": "En Proceso",
+            "fechaLimite": "2025-04-25"
+          }
+        ]
       }
     ]
   }
