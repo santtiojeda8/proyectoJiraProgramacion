@@ -37,6 +37,7 @@ export const ModalEditCard: FC<IEditTarea> = ({ tarea, handleCloseEditModal }) =
           <label>Estado:</label>
           <select name="estado" value={formValues.estado} onChange={handleChange}>
             <option value="Pendiente">Pendiente</option>
+            <option value="En Progreso">En Progreso</option>
             <option value="Finalizado">Finalizado</option>
           </select>
           

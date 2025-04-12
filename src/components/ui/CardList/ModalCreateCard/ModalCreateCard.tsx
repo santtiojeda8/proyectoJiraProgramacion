@@ -4,7 +4,6 @@ import { ITarea } from "../../../../types/IBacklog";
 import { generadorDeId } from "../../../../utils/generadorIds";
 import styles from "./ModalCreateCard.module.css";
 import Swal from "sweetalert2";
-import { useSprints } from "../../../../hooks/useSprints";
 
 type ICreateTarea = { 
   handleCloseModalCreate: () => void;
@@ -23,10 +22,7 @@ export const ModalCreateCard: FC<ICreateTarea> = ({ handleCloseModalCreate}) => 
 
   const { crearTarea } = useTarea();
   const [formValues, setFormValues] = useState<ITarea>(initialValues);
-  const { agregarTareaASprint } = useSprints();
-
   
-
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormValues((prev) => ({ ...prev, [name]: value }));
@@ -60,7 +56,7 @@ export const ModalCreateCard: FC<ICreateTarea> = ({ handleCloseModalCreate}) => 
         <label>Decida el estado de la tarea</label>
         <select name="estado" onChange={handleChange} value={formValues.estado} required>
           <option value="Pendiente">Pendiente</option>
-          <option value="En Proceso">En Proceso</option>
+          <option value="En Progerso">En Progreso</option>
           <option value="Finalizado">Finalizado</option>
         </select>
 

@@ -58,7 +58,7 @@ export const Sprints: FC<Params> = () => {
     (t) => t.estado === "Pendiente"
   );
   const tareasEnProgreso = sprint.tareas.filter(
-    (t) => t.estado === "En Proceso"
+    (t) => t.estado === "En Progreso"
   );
   const tareasCompletadas = sprint.tareas.filter(
     (t) => t.estado === "Finalizado"
