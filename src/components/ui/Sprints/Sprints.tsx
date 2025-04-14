@@ -20,9 +20,7 @@ export const Sprints: FC<Params> = () => {
 
   const [sprint, setSprint] = useState<ISprint | null>(null);
   const [modalAbierto, setModalAbierto] = useState(false);
-  const [tareaSeleccionada, setTareaSeleccionada] = useState<ITarea | null>(
-    null
-  ) 
+  const [tareaSeleccionada, setTareaSeleccionada] = useState<ITarea | null>(null)
 
   const handleOpenModalEdit = (tarea: ITarea) => {
     setTareaSeleccionada(tarea); // ya no es necesario si usas el store

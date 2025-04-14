@@ -1,6 +1,14 @@
 {
   "backlog": {
-    "tareas": []
+    "tareas": [
+      {
+        "id": "c5d2e920-fecf-48a1-a658-ca81accbf1ea",
+        "titulo": "TErminar",
+        "descripcion": "TErmninar el proyecto",
+        "estado": "En Progerso",
+        "fechaLimite": "2025-04-17"
+      }
+    ]
   },
   "sprintList": {
     "sprints": [
