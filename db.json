@@ -14,6 +14,13 @@
         "descripcion": "iron man 2\n",
         "estado": "Finalizado",
         "fechaLimite": "2025-04-16"
+      },
+      {
+        "id": "38c70b18-16ab-4310-a9b2-b68b7d18ff8f",
+        "titulo": "",
+        "descripcion": "",
+        "estado": "Pendiente",
+        "fechaLimite": ""
       }
     ]
   },
