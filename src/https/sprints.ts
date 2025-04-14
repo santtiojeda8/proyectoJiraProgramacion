@@ -1,7 +1,8 @@
 import axios from 'axios'
 import { ISprint } from '../types/ISprints'
+import {config} from "../config/config"
 
-const API_URL_SPRINT = "http://localhost:3000/sprintList"
+const API_URL_SPRINT=config.PortSprintList
 
 
 export const getAllSprint = async (): Promise<ISprint[]> => {
@@ -30,7 +31,7 @@ export const postNuevoSprint = async (nuevoSprint : ISprint): Promise<void> => {
     }
 }
 
-export const editTarea = async (idSprint : string , sprintEditado : Partial<ISprint>): Promise<void> => {
+export const editSprint = async (idSprint : string , sprintEditado : Partial<ISprint>): Promise<void> => {
 
     try {
         const response = await axios.get<{ sprints: ISprint[] }>(API_URL_SPRINT);

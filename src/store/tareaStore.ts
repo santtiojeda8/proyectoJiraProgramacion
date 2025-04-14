@@ -12,7 +12,7 @@ interface ITareaStore {
 }
 
 export const tareaStore = create<ITareaStore>((set) => ({
-  tareas: [],
+  tareas: [], 
   tareaActiva: null,
   // funciones modificadoras para el Array
 

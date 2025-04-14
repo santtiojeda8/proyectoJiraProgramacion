@@ -54,7 +54,7 @@ export const TareasList = () => {
         <div className={styles.conatinerTareasCard}>
           {tareas.length > 0 ? (
             tareas.map((el) => (
-              <TareaCard handleOpenModalEdit={handleOpenModalEdit} tarea={el} />
+              <TareaCard tarea={el} />
             ))
           ) : (
             <div>No hay tareas</div>

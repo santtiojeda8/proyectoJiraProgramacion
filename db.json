@@ -2,6 +2,7 @@
   "backlog": {
     "tareas": [
       {
+<<<<<<< HEAD
         "id": "3313beee-48ac-4d05-95f1-1393fc3a751d",
         "titulo": "pepito",
         "descripcion": "pepito tiene hambre",
@@ -21,23 +22,94 @@
         "descripcion": "",
         "estado": "Pendiente",
         "fechaLimite": ""
+=======
+        "id": "c5d2e920-fecf-48a1-a658-ca81accbf1ea",
+        "titulo": "TErminar",
+        "descripcion": "TErmninar el proyecto",
+        "estado": "En Progerso",
+        "fechaLimite": "2025-04-17"
+>>>>>>> 7169fd50050b59c1b908f3473197a0cfb122cdcc
       }
     ]
   },
   "sprintList": {
     "sprints": [
       {
-        "id": "b0e3f34b-68c6-49eb-b059-ab251ed81629",
-        "fechaInicio": "2025-03-04",
-        "fechaCierre": "2025-03-11",
+        "id": "ee3f6edc-072b-4ec1-8be7-57ec92c94f33",
+        "fechaInicio": "2025-04-06",
+        "fechaCierre": "2025-04-13",
         "nombre": "Sprint 122",
         "tareas": [
           {
-            "id": "50699dec-3d1a-45ff-a94d-82d416eac053",
-            "titulo": "Tarea 2",
-            "descripcion": "Estamos aca",
-            "estado": "pendiente",
-            "fechaLimite": "2025-03-06"
+            "id": "bc8fbb5c-746a-4f95-88e2-91ea8d891794",
+            "titulo": "Hulk",
+            "descripcion": "Huulk es de color verd",
+            "estado": "Finalizado",
+            "fechaLimite": "2025-05-10"
+          },
+          {
+            "id": "188d96d9-4710-4a1e-a22d-1c482981ddc4",
+            "titulo": "asdasd",
+            "descripcion": "sdadda",
+            "estado": "En Progreso",
+            "fechaLimite": "2025-04-12"
+          },
+          {
+            "id": "b6577ba8-487a-4025-906c-a6df7ee227ef",
+            "titulo": "Aplicar CSS",
+            "descripcion": "Paulo, apolica css a las card",
+            "estado": "Pendiente",
+            "fechaLimite": "2025-04-24"
+          },
+          {
+            "id": "250c481c-db9b-43f3-8ed5-953e44d89927",
+            "titulo": "fafdsfas",
+            "descripcion": "fdasasffafadffaf",
+            "estado": "Finalizado",
+            "fechaLimite": "2025-04-13"
+          },
+          {
+            "id": "04539d66-d1a3-46f7-a350-8b4fb6e9998d",
+            "titulo": "seba raton",
+            "descripcion": "rpagate una coca",
+            "estado": "Pendiente",
+            "fechaLimite": "2025-04-13"
+          }
+        ]
+      },
+      {
+        "id": "f0fcc38c-f3bb-430d-bd2a-9a055f981b3b",
+        "fechaInicio": "2025-04-09",
+        "fechaCierre": "2025-04-11",
+        "nombre": "BENDITO RUFIAN",
+        "tareas": [
+          {
+            "id": "acc2a0f3-8833-41fe-91b2-ddbb308414dd",
+            "titulo": "Iron Man",
+            "descripcion": "Irona Man es de carton",
+            "estado": "Pendiente",
+            "fechaLimite": "2025-04-05"
+          },
+          {
+            "id": "3d146083-ca4c-44a9-a582-58c62617b8fc",
+            "titulo": "fsdfdssdfsfsdfsdfdsfsdfd",
+            "descripcion": "sdf",
+            "estado": "Finalizado",
+            "fechaLimite": "2025-04-25"
+          },
+          {
+            "id": "2eda6b55-4aa2-4316-beb2-9450bbde3bdc",
+            "titulo": "s",
+            "descripcion": "s",
+            "estado": "En Progreso",
+            "fechaLimite": "2025-04-25"
+          },
+          {
+            "id": "e9cc4467-87a9-4044-a45e-fbb6a47517dc",
+            "titulo": "aw",
+            "descripcion": "awaw",
+            "estado": "En Progreso",
+            "fechaLimite": "2025-04-17"
           }
         ]
       }
