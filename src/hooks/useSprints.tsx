@@ -61,6 +61,7 @@ export const useSprints = () => {
 
   const moverTareaASprint = async (tarea: ITarea, idSprint: string) => {
     const sprintDestino = sprints.find((s) => s.id === idSprint);
+    
     if (!sprintDestino) {
       console.error("Sprint no encontrado");
       return;
