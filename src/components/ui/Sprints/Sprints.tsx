@@ -6,6 +6,8 @@ import { ISprint } from "../../../types/ISprints";
 import { ITarea } from "../../../types/IBacklog";
 import { tareaStore } from "../../../store/tareaStore";
 import { TareaCard } from "../CardList/TareaCard/TareaCard";
+import { ModalCreateCardSprint } from "../CardList/ModalCreateCardSprint/ModalCreateCardSprint";
+import { TareaCardSprint } from "../CardList/TareaCardSprint/TareaCardSprint";
 
 
 interface Params {
@@ -76,7 +78,7 @@ export const Sprints: FC<Params> = () => {
             {tareasPendientes.length > 0 ? (
               tareasPendientes.map((tarea) => (
                 <div key={tarea.id} className={styles.tarea_card}>
-                  <TareaCard tarea={tarea} />
+                  <TareaCardSprint tarea={tarea} />
                 </div>
               ))
             ) : (
@@ -88,7 +90,7 @@ export const Sprints: FC<Params> = () => {
             {tareasEnProgreso.length > 0 ? (
               tareasEnProgreso.map((tarea) => (
                 <div key={tarea.id} className={styles.tarea_card}>
-                  <TareaCard tarea={tarea} />
+                  <TareaCardSprint tarea={tarea} />
                 </div>
               ))
             ) : (
@@ -100,7 +102,7 @@ export const Sprints: FC<Params> = () => {
             {tareasCompletadas.length > 0 ? (
               tareasCompletadas.map((tarea) => (
                 <div key={tarea.id} className={styles.tarea_card}>
-                  <TareaCard tarea={tarea} />
+                  <TareaCardSprint tarea={tarea} />
                 </div>
               ))
             ) : (
@@ -108,12 +110,12 @@ export const Sprints: FC<Params> = () => {
             )}
           </div>
         </div>
-        {/* {modalAbierto && (
-          <ModalCreateCard
+        {modalAbierto && (
+          <ModalCreateCardSprint
             handleCloseModalCreate={handleCloseModal}
             idSprint={sprint.id} // 👈 pasás el ID del sprint al modal
           />
-        )} */}
+        )}
       </div>
     </>
   );

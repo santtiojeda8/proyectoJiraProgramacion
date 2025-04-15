@@ -1,0 +1,76 @@
+.cardContainer {
+    background-color: none;
+    padding: 16px;
+    color: white;
+    width: 280px;
+    margin: 10px auto;
+  }
+  
+  .estado {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .card {
+    background-color: white;
+    color: black;
+    padding: 16px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+  }
+  
+  .actionsRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    flex-wrap: nowrap;
+  }
+  
+  .backlogBtn,
+  .progressBtn {
+    padding: 4px 10px;
+    border-radius: 14px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .backlogBtn {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .progressBtn {
+    background-color: #f0ad4e;
+    color: white;
+  }
+  
+  .iconBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    color: #7c7cd1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: transform 0.2s;
+  }
+  
+  .iconBtn:hover {
+    transform: scale(1.1);
+  }
+  
+  .iconBtn:last-child {
+    color: red;
+  }
+  
