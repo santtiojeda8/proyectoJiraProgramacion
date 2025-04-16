@@ -1,15 +1,15 @@
 .back {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: white;
     margin: 0;
     padding: 0;
+
 }
 
 .header {
     text-align: center;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 .create_task {
@@ -19,14 +19,16 @@
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
+
 }
 
 .board {
     display: flex;
     height: 80vh;
-    width: 75vw;
+
     padding: 20px;
-    background-color: white;
+
+    /* overflow: auto; */
 }
 
 .column {
@@ -36,10 +38,17 @@
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    max-height: 60vh;
+    overflow-y:auto ;
+    text-align: center;
 }
 
 .column h2 {
-    text-align: center;
+
+    margin-bottom: 50px;
 }
 
 .task_card {
@@ -76,4 +85,10 @@
 .view, .edit, .delete {
     background-color: #ccc;
     color: #000;
+}
+.createTarea{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
 }

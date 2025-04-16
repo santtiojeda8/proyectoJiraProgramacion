@@ -25,13 +25,6 @@
             "fechaLimite": "2025-04-12"
           },
           {
-            "id": "b6577ba8-487a-4025-906c-a6df7ee227ef",
-            "titulo": "Aplicar CSS",
-            "descripcion": "Paulo, apolica css a las card",
-            "estado": "Pendiente",
-            "fechaLimite": "2025-04-24"
-          },
-          {
             "id": "04539d66-d1a3-46f7-a350-8b4fb6e9998d",
             "titulo": "seba raton",
             "descripcion": "rpagate una coca",
@@ -44,6 +37,27 @@
             "descripcion": "Termninar el proyecto",
             "estado": "En Progerso",
             "fechaLimite": "2025-04-17"
+          },
+          {
+            "id": "3bde7106-825a-4480-9174-e0877dfa8ebb",
+            "titulo": "a verr",
+            "descripcion": "averr",
+            "estado": "Pendiente",
+            "fechaLimite": "2025-04-23"
+          },
+          {
+            "id": "54630b23-f931-4b64-acac-76c502491bac",
+            "titulo": "hloa",
+            "descripcion": "safsad",
+            "estado": "Pendiente",
+            "fechaLimite": "2025-04-25"
+          },
+          {
+            "id": "92e67f2f-e31a-4e82-bcd3-0c6f1e811e68",
+            "titulo": "asdsa",
+            "descripcion": "sadas",
+            "estado": "Pendiente",
+            "fechaLimite": "2025-04-25"
           }
         ]
       },

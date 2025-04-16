@@ -18,7 +18,7 @@ export const Sprints: FC<Params> = () => {
 
   const { id } = useParams<{ id?: string }>();
 
-  const { sprints , getSprints } = useSprints();
+  const { sprints, getSprints } = useSprints();
 
   const [sprint, setSprint] = useState<ISprint | null>(null);
   const [modalAbierto, setModalAbierto] = useState(false);
@@ -69,8 +69,11 @@ export const Sprints: FC<Params> = () => {
       <div className={styles.back}>
         <div className={styles.header}>
           <h1>Nombre de la Sprint: {sprint?.nombre}</h1>
-          <h2>Tareas de la Sprint</h2>
-          <button className={styles.create_task} onClick={handleNuevaTarea}>Crear Tarea</button>
+          <div className={styles.createTarea}>
+            <h2>Tareas de la Sprint</h2>
+            <button className={styles.create_task} onClick={handleNuevaTarea}>Crear Tarea</button>
+          </div>
+
         </div>
         <div className={styles.board}>
           <div className={styles.column}>
@@ -110,13 +113,14 @@ export const Sprints: FC<Params> = () => {
             )}
           </div>
         </div>
-        {modalAbierto && (
-          <ModalCreateCardSprint
-            handleCloseModalCreate={handleCloseModal}
-            idSprint={sprint.id} // 👈 pasás el ID del sprint al modal
-          />
-        )}
       </div>
+
+      {modalAbierto && (
+        <ModalCreateCardSprint
+          handleCloseModalCreate={handleCloseModal}
+          idSprint={sprint.id} // 👈 pasás el ID del sprint al modal
+        />
+      )}
     </>
   );
 };
