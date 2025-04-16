@@ -13,7 +13,7 @@ import { tareaStore } from "../store/tareaStore";
 import { eliminarTareaId } from "../https/tarea";
 
 export const useSprints = () => {
-  const { eliminarTareaArray } = tareaStore.getState();
+  const { eliminarTareaArray , tareas } = tareaStore.getState();
   const {
     sprints,
     setArraySprint,
@@ -29,6 +29,8 @@ export const useSprints = () => {
       eliminarSprintsArray: state.eliminarSprintsArray,
     }))
   );
+
+
   const agregarTareaASprint = (idSprint: string, nuevaTarea: ITarea) => {
     // Eliminar la tarea de cualquier sprint que ya la tenga
     const sprintConTarea = sprints.find((sprint) =>
@@ -80,15 +82,15 @@ export const useSprints = () => {
 
     try {
       await editSprint(sprintActualizado.id, sprintActualizado);
-
+      
+      // Esta actualiza el sprint en el store
+      editarSprintsArray(sprintActualizado);
+      
       // Esta línea asegura que desaparece del backlog
       eliminarTareaArray(tarea.id);
 
       // Esto elimina la tarea que esta en el db.json
       eliminarTareaId(tarea.id) 
-
-      // Esta actualiza el sprint en el store
-      editarSprintsArray(sprintActualizado);
 
       Swal.fire("Tarea movida correctamente");
     } catch (error) {
@@ -155,6 +157,30 @@ export const useSprints = () => {
     }
   };
 
+  const eliminartareaDesdeSprint = async (idTarea : string , idSprint : string) => {
+
+    const sprintActualizado = sprints.find(sprint => sprint.id === idSprint);
+
+    if (sprintActualizado) {
+        sprintActualizado.tareas = sprintActualizado.tareas.filter(tarea => tarea.id !== idTarea);
+    }
+    
+      try {
+        if(!sprintActualizado){
+          throw new Error("Error al eliminar la tarea del sprint")
+        }
+        await editSprint(sprintActualizado.id, sprintActualizado);
+        
+        // Esta actualiza el sprint en el store
+        editarSprintsArray(sprintActualizado);
+  
+        Swal.fire("Tarea eliminada correctamente");
+      } catch (error) {
+        console.error("Error al eliminar tarea del sprint", error);
+        Swal.fire("Error al eliminar tarea", "", "error");
+      }
+    };
+
   return {
     sprints,
     getSprints,
@@ -163,5 +189,6 @@ export const useSprints = () => {
     eliminarSprint,
     agregarTareaASprint,
     moverTareaASprint,
+    eliminartareaDesdeSprint,
   };
 };

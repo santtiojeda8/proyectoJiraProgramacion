@@ -1,14 +1,6 @@
 {
   "backlog": {
-    "tareas": [
-      {
-        "id": "c5d2e920-fecf-48a1-a658-ca81accbf1ea",
-        "titulo": "Terminar",
-        "descripcion": "TErmninar el proyecto",
-        "estado": "En Progerso",
-        "fechaLimite": "2025-04-17"
-      }
-    ]
+    "tareas": []
   },
   "sprintList": {
     "sprints": [
@@ -40,18 +32,18 @@
             "fechaLimite": "2025-04-24"
           },
           {
-            "id": "250c481c-db9b-43f3-8ed5-953e44d89927",
-            "titulo": "fafdsfas",
-            "descripcion": "fdasasffafadffaf",
-            "estado": "Finalizado",
-            "fechaLimite": "2025-04-13"
-          },
-          {
             "id": "04539d66-d1a3-46f7-a350-8b4fb6e9998d",
             "titulo": "seba raton",
             "descripcion": "rpagate una coca",
             "estado": "Pendiente",
             "fechaLimite": "2025-04-13"
+          },
+          {
+            "id": "c5d2e920-fecf-48a1-a658-ca81accbf1ea",
+            "titulo": "Terminar",
+            "descripcion": "Termninar el proyecto",
+            "estado": "En Progerso",
+            "fechaLimite": "2025-04-17"
           }
         ]
       },

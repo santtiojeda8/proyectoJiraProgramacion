@@ -5,16 +5,20 @@ import styles from "./TareaCardSprint.module.css";
 import { Eye, Pencil, Trash2 } from "lucide-react"; // Si usás iconos, por ejemplo, de lucide-react
 import { ViewCard } from "../ViewCard/ViewCard";
 import { ModalEditCard } from "../ModalEditCard/ModalEditCard";
+import { useParams } from "react-router-dom";
+import { useSprints } from "../../../../hooks/useSprints";
 
 type IViewTarea = {
   tarea: ITarea;
 };
 
 export const TareaCardSprint: FC<IViewTarea> = ({ tarea }) => {
-
+  const { id } = useParams<{ id?: string }>();
 
   const [openViewModal, setOpenViewModal] = useState(false);
   const [openEditModal, setOpenEditModal] = useState(false);
+
+  const {eliminartareaDesdeSprint} = useSprints()
 
   const handelOpenViewModal = () => {
     setOpenViewModal(true);
@@ -33,7 +37,10 @@ export const TareaCardSprint: FC<IViewTarea> = ({ tarea }) => {
   }
 
   const handleDeleteTarea = () => {
-    console.log('delete')
+    if(!id){
+      throw new Error("ID VACIO")
+    }
+    eliminartareaDesdeSprint(tarea.id , id)
   }
 
   return (
@@ -59,7 +66,7 @@ export const TareaCardSprint: FC<IViewTarea> = ({ tarea }) => {
             <button className={styles.iconBtn} onClick={handleOpenEditModal}>
               <Pencil size={18} />
             </button>
-            <button className={styles.iconBtn}>
+            <button className={styles.iconBtn} onClick={handleDeleteTarea}>
               <Trash2 size={18} />
             </button>
           </div>
