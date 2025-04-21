@@ -1,4 +1,3 @@
-// TareaCardSprint.tsx
 import { FC, useState } from "react";
 import { ITarea } from "../../../../types/IBacklog";
 import styles from "./TareaCardSprint.module.css";
@@ -18,37 +17,45 @@ export const TareaCardSprint: FC<IViewTarea> = ({ tarea }) => {
   const [openViewModal, setOpenViewModal] = useState(false);
   const [openEditModal, setOpenEditModal] = useState(false);
 
-  const {eliminartareaDesdeSprint} = useSprints()
+  const { actualizarEstadoTarea,eliminarTareaDesdeSprint} = useSprints();
 
-  const handelOpenViewModal = () => {
+
+  const handleOpenViewModal = () => {
     setOpenViewModal(true);
-  }
+  };
 
   const handleCloseViewModal = () => {
-    setOpenViewModal(false)
-  }
+    setOpenViewModal(false);
+  };
 
   const handleOpenEditModal = () => {
-    setOpenEditModal(true)
-  }
- 
+    setOpenEditModal(true);
+  };
+
   const handleCloseEditModal = () => {
-    setOpenEditModal(false)
-  }
+    setOpenEditModal(false);
+  };
 
   const handleDeleteTarea = () => {
-    if(!id){
-      throw new Error("ID VACIO")
+    if (!id) {
+      throw new Error("ID vacío");
     }
-    eliminartareaDesdeSprint(tarea.id , id)
-  }
+    eliminarTareaDesdeSprint(tarea.id, id);
+  };
+
+  const handleEstadoChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const nuevoEstado = event.target.value;
+    if (id) {
+      actualizarEstadoTarea(tarea.id, id, nuevoEstado); // Llamamos a la función para actualizar el estado
+    }
+  };
 
   return (
     <>
       <div className={styles.cardContainer}>
         <div className={styles.card}>
           <p>
-            <strong>Titulo:</strong> {tarea.titulo}
+            <strong>Título:</strong> {tarea.titulo}
           </p>
           <p>
             <strong>Descripción:</strong> {tarea.descripcion}
@@ -58,9 +65,19 @@ export const TareaCardSprint: FC<IViewTarea> = ({ tarea }) => {
           </p>
           <div className={styles.actionsRow}>
             <button className={styles.backlogBtn}>Enviar al backlog</button>
-            <button className={styles.progressBtn}>{tarea.estado}</button>
 
-            <button className={styles.iconBtn} onClick={handelOpenViewModal}>
+            {/* Agregamos el select para el cambio de estado */}
+            <select
+              className={styles.estadoSelect}
+              value={tarea.estado}
+              onChange={handleEstadoChange}
+            >
+              <option value="Pendiente">Pendiente</option>
+              <option value="En Progreso">En Progreso</option>
+              <option value="Finalizado">Finalizado</option>
+            </select>
+
+            <button className={styles.iconBtn} onClick={handleOpenViewModal}>
               <Eye size={18} />
             </button>
             <button className={styles.iconBtn} onClick={handleOpenEditModal}>
@@ -72,8 +89,12 @@ export const TareaCardSprint: FC<IViewTarea> = ({ tarea }) => {
           </div>
         </div>
       </div>
-      {openViewModal && <ViewCard tarea={tarea} handleCloseViewModal={handleCloseViewModal}/> }
-      {openEditModal && <ModalEditCard tarea={tarea} handleCloseEditModal={handleCloseEditModal}/> }
+      {openViewModal && (
+        <ViewCard tarea={tarea} handleCloseViewModal={handleCloseViewModal} />
+      )}
+      {openEditModal && (
+        <ModalEditCard tarea={tarea} handleCloseEditModal={handleCloseEditModal} />
+      )}
     </>
   );
 };

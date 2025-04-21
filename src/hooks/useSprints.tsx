@@ -157,7 +157,7 @@ export const useSprints = () => {
     }
   };
 
-  const eliminartareaDesdeSprint = async (idTarea : string , idSprint : string) => {
+  const eliminarTareaDesdeSprint = async (idTarea : string , idSprint : string) => {
 
     const sprintActualizado = sprints.find(sprint => sprint.id === idSprint);
 
@@ -180,6 +180,28 @@ export const useSprints = () => {
         Swal.fire("Error al eliminar tarea", "", "error");
       }
     };
+    const actualizarEstadoTarea = async (idTarea: string, idSprint: string, nuevoEstado: string) => {
+      const sprint = sprints.find((s) => s.id === idSprint);
+      if (!sprint) return;
+    
+      const tareasActualizadas = sprint.tareas.map((t) =>
+        t.id === idTarea ? { ...t, estado: nuevoEstado } : t
+      );
+    
+      const sprintActualizado: ISprint = {
+        ...sprint,
+        tareas: tareasActualizadas,
+      };
+    
+      try {
+        await editSprint(sprintActualizado.id, sprintActualizado);
+        editarSprintsArray(sprintActualizado);
+        Swal.fire("Estado actualizado correctamente");
+      } catch (error) {
+        console.error("Error al actualizar estado de la tarea", error);
+        Swal.fire("Error al actualizar estado", "", "error");
+      }
+    };
 
   return {
     sprints,
@@ -189,6 +211,7 @@ export const useSprints = () => {
     eliminarSprint,
     agregarTareaASprint,
     moverTareaASprint,
-    eliminartareaDesdeSprint,
+    eliminarTareaDesdeSprint,
+    actualizarEstadoTarea
   };
 };

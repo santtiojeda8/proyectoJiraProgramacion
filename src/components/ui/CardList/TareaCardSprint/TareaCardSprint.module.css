@@ -72,4 +72,8 @@
   .iconBtn:last-child {
     color: red;
   }
+  .estadoSelect {
+    background-color: #F29E17;
+    color: black;
+  }
   

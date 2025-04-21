@@ -1,6 +1,14 @@
 {
   "backlog": {
-    "tareas": []
+    "tareas": [
+      {
+        "id": "844d7743-dbff-4b46-90dd-4d935308953c",
+        "titulo": "Prueba",
+        "descripcion": "asdas",
+        "estado": "Pendiente",
+        "fechaLimite": "2025-04-10"
+      }
+    ]
   },
   "sprintList": {
     "sprints": [
@@ -21,14 +29,14 @@
             "id": "188d96d9-4710-4a1e-a22d-1c482981ddc4",
             "titulo": "asdasd",
             "descripcion": "sdadda",
-            "estado": "En Progreso",
+            "estado": "Pendiente",
             "fechaLimite": "2025-04-12"
           },
           {
             "id": "04539d66-d1a3-46f7-a350-8b4fb6e9998d",
             "titulo": "seba raton",
             "descripcion": "rpagate una coca",
-            "estado": "Pendiente",
+            "estado": "Finalizado",
             "fechaLimite": "2025-04-13"
           },
           {
@@ -37,13 +45,6 @@
             "descripcion": "Termninar el proyecto",
             "estado": "En Progerso",
             "fechaLimite": "2025-04-17"
-          },
-          {
-            "id": "3bde7106-825a-4480-9174-e0877dfa8ebb",
-            "titulo": "a verr",
-            "descripcion": "averr",
-            "estado": "Pendiente",
-            "fechaLimite": "2025-04-23"
           },
           {
             "id": "54630b23-f931-4b64-acac-76c502491bac",

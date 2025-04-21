@@ -6,7 +6,6 @@ import { ISprint } from "../../../types/ISprints";
 import { ITarea } from "../../../types/IBacklog";
 import { tareaStore } from "../../../store/tareaStore";
 import { TareaCard } from "../CardList/TareaCard/TareaCard";
-import { ModalCreateCardSprint } from "../CardList/ModalCreateCardSprint/ModalCreateCardSprint";
 import { TareaCardSprint } from "../CardList/TareaCardSprint/TareaCardSprint";
 
 
@@ -22,19 +21,7 @@ export const Sprints: FC<Params> = () => {
 
   const [sprint, setSprint] = useState<ISprint | null>(null);
   const [modalAbierto, setModalAbierto] = useState(false);
-  const [tareaSeleccionada, setTareaSeleccionada] = useState<ITarea | null>(null)
-
-  const handleOpenModalEdit = (tarea: ITarea) => {
-    setTareaSeleccionada(tarea); // ya no es necesario si usas el store
-    tareaStore.getState().setTareaActiva(tarea); // 👈 agregar esta línea
-    setModalAbierto(true);
-  };
-
-  const handleCloseModal = () => {
-    setTareaSeleccionada(null);
-    setModalAbierto(false);
-  };
-
+  
   const handleNuevaTarea = () => {
     tareaStore.getState().setTareaActiva(null); // nueva tarea
     setModalAbierto(true);
@@ -115,12 +102,7 @@ export const Sprints: FC<Params> = () => {
         </div>
       </div>
 
-      {modalAbierto && (
-        <ModalCreateCardSprint
-          handleCloseModalCreate={handleCloseModal}
-          idSprint={sprint.id} // 👈 pasás el ID del sprint al modal
-        />
-      )}
+      
     </>
   );
 };
