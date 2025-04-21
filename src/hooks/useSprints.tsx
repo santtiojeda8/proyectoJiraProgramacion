@@ -13,7 +13,7 @@ import { tareaStore } from "../store/tareaStore";
 import { eliminarTareaId } from "../https/tarea";
 
 export const useSprints = () => {
-  const { eliminarTareaArray , tareas } = tareaStore.getState();
+  const { eliminarTareaArray } = tareaStore.getState();
   const {
     sprints,
     setArraySprint,
@@ -31,7 +31,7 @@ export const useSprints = () => {
   );
 
 
-  const agregarTareaASprint = (idSprint: string, nuevaTarea: ITarea) => {
+  const agregarTareaASprint = (idSprint: string, nuevaTarea: ITarea) => { //Es la misma funcion que la funcion de abaja, cumplen lo mismo
     // Eliminar la tarea de cualquier sprint que ya la tenga
     const sprintConTarea = sprints.find((sprint) =>
       sprint.tareas.some((t) => t.id === nuevaTarea.id)
@@ -180,6 +180,7 @@ export const useSprints = () => {
         Swal.fire("Error al eliminar tarea", "", "error");
       }
     };
+
     const actualizarEstadoTarea = async (idTarea: string, idSprint: string, nuevoEstado: string) => {
       const sprint = sprints.find((s) => s.id === idSprint);
       if (!sprint) return;

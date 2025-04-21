@@ -5,8 +5,8 @@ import { useParams } from "react-router-dom";
 import { ISprint } from "../../../types/ISprints";
 import { ITarea } from "../../../types/IBacklog";
 import { tareaStore } from "../../../store/tareaStore";
-import { TareaCard } from "../CardList/TareaCard/TareaCard";
 import { TareaCardSprint } from "../CardList/TareaCardSprint/TareaCardSprint";
+import { CreateTareaSprint } from "../CreateTareaSprint/CreateTareaSprint";
 
 
 interface Params {
@@ -17,11 +17,23 @@ export const Sprints: FC<Params> = () => {
 
   const { id } = useParams<{ id?: string }>();
 
-  const { sprints, getSprints } = useSprints();
+  const { sprints , getSprints } = useSprints();
 
   const [sprint, setSprint] = useState<ISprint | null>(null);
   const [modalAbierto, setModalAbierto] = useState(false);
-  
+  const [tareaSeleccionada, setTareaSeleccionada] = useState<ITarea | null>(null)
+
+  const handleOpenModalEdit = (tarea: ITarea) => {
+    setTareaSeleccionada(tarea); // ya no es necesario si usas el store
+    tareaStore.getState().setTareaActiva(tarea); // 👈 agregar esta línea
+    setModalAbierto(true);
+  };
+
+  const handleCloseModal = () => {
+    setTareaSeleccionada(null);
+    setModalAbierto(false);
+  };
+
   const handleNuevaTarea = () => {
     tareaStore.getState().setTareaActiva(null); // nueva tarea
     setModalAbierto(true);
@@ -56,11 +68,8 @@ export const Sprints: FC<Params> = () => {
       <div className={styles.back}>
         <div className={styles.header}>
           <h1>Nombre de la Sprint: {sprint?.nombre}</h1>
-          <div className={styles.createTarea}>
-            <h2>Tareas de la Sprint</h2>
-            <button className={styles.create_task} onClick={handleNuevaTarea}>Crear Tarea</button>
-          </div>
-
+          <h2>Tareas de la Sprint</h2>
+          <button className={styles.create_task} onClick={handleNuevaTarea}>Crear Tarea</button>
         </div>
         <div className={styles.board}>
           <div className={styles.column}>
@@ -100,9 +109,13 @@ export const Sprints: FC<Params> = () => {
             )}
           </div>
         </div>
+        {modalAbierto && (
+          <CreateTareaSprint
+            handleCloseModalCreate={handleCloseModal}
+            idSprint={id} // 👈 pasás el ID del sprint al modal
+          />
+        )}
       </div>
-
-      
     </>
   );
 };

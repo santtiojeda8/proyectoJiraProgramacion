@@ -3,9 +3,9 @@ import { ITarea } from "../../../../types/IBacklog";
 import styles from "./TareaCardSprint.module.css";
 import { Eye, Pencil, Trash2 } from "lucide-react"; // Si usás iconos, por ejemplo, de lucide-react
 import { ViewCard } from "../ViewCard/ViewCard";
-import { ModalEditCard } from "../ModalEditCard/ModalEditCard";
 import { useParams } from "react-router-dom";
 import { useSprints } from "../../../../hooks/useSprints";
+import { ModalEditTareaSprint } from "../../ModalEditTareaSprint/ModalEditTareaSprint";
 
 type IViewTarea = {
   tarea: ITarea;
@@ -93,7 +93,7 @@ export const TareaCardSprint: FC<IViewTarea> = ({ tarea }) => {
         <ViewCard tarea={tarea} handleCloseViewModal={handleCloseViewModal} />
       )}
       {openEditModal && (
-        <ModalEditCard tarea={tarea} handleCloseEditModal={handleCloseEditModal} />
+        <ModalEditTareaSprint tarea={tarea} handleCloseEditModal={handleCloseEditModal} />
       )}
     </>
   );

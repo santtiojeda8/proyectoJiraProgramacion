@@ -1,0 +1,87 @@
+/* Fondo oscuro translúcido */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Contenido del modal */
+.modalContent {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  h3 {
+    text-align: center;
+  }
+  background: #e0f2ff; /* Fondo azul claro */
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  /* text-align: center; */
+  position: relative;
+}
+
+/* Contenedor de botones */
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+/* Botón de cerrar */
+.cancelButton {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancelButton:hover {
+  background: #ff4f4f;
+}
+
+/* Botón de guardar */
+.submitButton {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background: #45a049;
+}
+.form {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 📱 MEDIA QUERY para pantallas pequeñas */
+@media screen and (max-width: 480px) {
+  .modalContent {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cancelButton,
+  .submitButton {
+    width: 100%;
+  }
+}

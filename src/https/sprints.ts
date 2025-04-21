@@ -43,7 +43,7 @@ export const editSprint = async (idSprint : string , sprintEditado : Partial<ISp
         await axios.put(API_URL_SPRINT , {sprints : sprintActualizados})
 
     } catch (error) {
-        console.log("Error en el ediTarea" , error)
+        console.log("Error en el editSprint" , error)
         throw error
     }
 }
