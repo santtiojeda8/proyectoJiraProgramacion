@@ -6,6 +6,7 @@ import { ViewCard } from "../ViewCard/ViewCard";
 import { useParams } from "react-router-dom";
 import { useSprints } from "../../../../hooks/useSprints";
 import { ModalEditTareaSprint } from "../../ModalEditTareaSprint/ModalEditTareaSprint";
+import { useTarea } from "../../../../hooks/useTarea";
 
 type IViewTarea = {
   tarea: ITarea;
@@ -18,6 +19,7 @@ export const TareaCardSprint: FC<IViewTarea> = ({ tarea }) => {
   const [openEditModal, setOpenEditModal] = useState(false);
 
   const { actualizarEstadoTarea,eliminarTareaDesdeSprint} = useSprints();
+  const {crearTarea} = useTarea()
 
 
   const handleOpenViewModal = () => {
@@ -50,6 +52,11 @@ export const TareaCardSprint: FC<IViewTarea> = ({ tarea }) => {
     }
   };
 
+  const sendToBacklog = () => {
+    crearTarea(tarea)
+    handleDeleteTarea()
+  }
+
   return (
     <>
       <div className={styles.cardContainer}>
@@ -64,8 +71,7 @@ export const TareaCardSprint: FC<IViewTarea> = ({ tarea }) => {
             <strong>Fecha Límite:</strong> {tarea.fechaLimite}
           </p>
           <div className={styles.actionsRow}>
-            <button className={styles.backlogBtn}>Enviar al backlog</button>
-
+            <button className={styles.backlogBtn} onClick={sendToBacklog}>Enviar al backlog</button>
             {/* Agregamos el select para el cambio de estado */}
             <select
               className={styles.estadoSelect}

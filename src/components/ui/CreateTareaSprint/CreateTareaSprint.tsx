@@ -8,7 +8,7 @@ import { ISprint } from "../../../types/ISprints";
 
 type ICreateTarea = {
   handleCloseModalCreate: () => void;
-  idSprint: string;
+  idSprint?: string;
 };
 
 export const CreateTareaSprint: FC<ICreateTarea> = ({

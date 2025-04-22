@@ -1,6 +1,28 @@
 {
   "backlog": {
-    "tareas": []
+    "tareas": [
+      {
+        "id": "bc8fbb5c-746a-4f95-88e2-91ea8d891794",
+        "titulo": "Hulk",
+        "descripcion": "Huulk es de color verd",
+        "estado": "Pendiente",
+        "fechaLimite": "2025-05-10"
+      },
+      {
+        "id": "acc2a0f3-8833-41fe-91b2-ddbb308414dd",
+        "titulo": "Iron Man",
+        "descripcion": "Irona Man es de carton",
+        "estado": "Pendiente",
+        "fechaLimite": "2025-04-05"
+      },
+      {
+        "id": "e9cc4467-87a9-4044-a45e-fbb6a47517dc",
+        "titulo": "aw",
+        "descripcion": "awaw",
+        "estado": "En Progreso",
+        "fechaLimite": "2025-04-17"
+      }
+    ]
   },
   "sprintList": {
     "sprints": [
@@ -10,13 +32,6 @@
         "fechaCierre": "2025-04-13",
         "nombre": "Sprint 122",
         "tareas": [
-          {
-            "id": "bc8fbb5c-746a-4f95-88e2-91ea8d891794",
-            "titulo": "Hulk",
-            "descripcion": "Huulk es de color verd",
-            "estado": "Pendiente",
-            "fechaLimite": "2025-05-10"
-          },
           {
             "id": "188d96d9-4710-4a1e-a22d-1c482981ddc4",
             "titulo": "asdasd",
@@ -61,13 +76,6 @@
         "nombre": "BENDITO RUFIAN",
         "tareas": [
           {
-            "id": "acc2a0f3-8833-41fe-91b2-ddbb308414dd",
-            "titulo": "Iron Man",
-            "descripcion": "Irona Man es de carton",
-            "estado": "Pendiente",
-            "fechaLimite": "2025-04-05"
-          },
-          {
             "id": "3d146083-ca4c-44a9-a582-58c62617b8fc",
             "titulo": "fsdfdssdfsfsdfsdfdsfsdfd",
             "descripcion": "sdf",
@@ -80,13 +88,6 @@
             "descripcion": "s",
             "estado": "En Progreso",
             "fechaLimite": "2025-04-25"
-          },
-          {
-            "id": "e9cc4467-87a9-4044-a45e-fbb6a47517dc",
-            "titulo": "aw",
-            "descripcion": "awaw",
-            "estado": "En Progreso",
-            "fechaLimite": "2025-04-17"
           },
           {
             "id": "46d11a13-7654-43c6-9aa8-fc678c8a9265",
