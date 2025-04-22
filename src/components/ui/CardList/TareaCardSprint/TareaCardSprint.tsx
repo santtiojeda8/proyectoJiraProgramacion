@@ -82,13 +82,13 @@ export const TareaCardSprint: FC<Props> = ({ tarea }) => {
             </select>
 
             <button className={styles.iconBtn} onClick={handleOpenViewModal}>
-              <Eye size={18} />
+              <Eye size={25} />
             </button>
             <button className={styles.iconBtn} onClick={handleOpenEditModal}>
-              <Pencil size={18} />
+              <Pencil size={25} />
             </button>
             <button className={styles.iconBtn} onClick={handleDeleteTarea}>
-              <Trash2 size={18} />
+              <Trash2 size={25} />
             </button>
           </div>
         </div>
