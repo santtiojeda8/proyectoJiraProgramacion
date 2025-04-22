@@ -50,3 +50,10 @@ border-radius: 10px;
   .iconButton:nth-child(3) svg {
     fill: red;
   }
+  .proximaAVencer {
+    border: 5px solid #ffc107; /* Amarillo */
+  }
+  
+  .expirada {
+    border: 5px solid #dc3545; /* Rojo */
+  }

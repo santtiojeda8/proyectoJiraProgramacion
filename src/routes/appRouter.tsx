@@ -1,7 +1,8 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Header } from "../components/ui/Header/Header";
-import { TareaScreen } from "../components/Screens/TareaScreen";
-import { SprintsScreen } from "../components/Screens/SprintsScreen";
+import { TareaScreen } from "../components/Screens/Backlog/TareaScreen";
+import { SprintsScreen } from "../components/Screens/Sprint/SprintsScreen";
+
 
 export const AppRouter = () => {
   return (

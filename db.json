@@ -2,11 +2,39 @@
   "backlog": {
     "tareas": [
       {
-        "id": "bc8fbb5c-746a-4f95-88e2-91ea8d891794",
-        "titulo": "Hulk",
-        "descripcion": "Huulk es de color verd",
+        "id": "04539d66-d1a3-46f7-a350-8b4fb6e9998d",
+        "titulo": "seba raton",
+        "descripcion": "rpagate una coca",
+        "estado": "Finalizado",
+        "fechaLimite": "2025-04-13"
+      },
+      {
+        "id": "529b3dd3-cb64-475b-9499-762767e123c2",
+        "titulo": "Prueba1",
+        "descripcion": "asdaaasdasdsada",
+        "estado": "En Progreso",
+        "fechaLimite": "2025-04-22"
+      },
+      {
+        "id": "a4301d2a-896f-473a-ab14-6c0f9f55bf00",
+        "titulo": "Prueba1",
+        "descripcion": "asdas",
         "estado": "Pendiente",
         "fechaLimite": "2025-05-10"
+      },
+      {
+        "id": "8a745b47-b709-434e-ac05-d576b45047f1",
+        "titulo": "asda",
+        "descripcion": "asdaasdasdas",
+        "estado": "Pendiente",
+        "fechaLimite": "2025-04-27"
+      },
+      {
+        "id": "7158f827-0904-406f-be57-a5f70045764c",
+        "titulo": "asda",
+        "descripcion": "asdasdasd",
+        "estado": "Pendiente",
+        "fechaLimite": "2025-04-03"
       },
       {
         "id": "acc2a0f3-8833-41fe-91b2-ddbb308414dd",
@@ -16,11 +44,53 @@
         "fechaLimite": "2025-04-05"
       },
       {
-        "id": "e9cc4467-87a9-4044-a45e-fbb6a47517dc",
-        "titulo": "aw",
-        "descripcion": "awaw",
+        "id": "bf58bf9c-1a2a-4718-b10b-417d317cf005",
+        "titulo": "pepito",
+        "descripcion": "asdasdas",
+        "estado": "Pendiente",
+        "fechaLimite": "2025-04-24"
+      },
+      {
+        "id": "0e1225e1-2821-485a-afac-a30781905977",
+        "titulo": "pepitoq1111",
+        "descripcion": "qaaaxawqeweq",
+        "estado": "Finalizado",
+        "fechaLimite": "2025-04-24"
+      },
+      {
+        "id": "46d11a13-7654-43c6-9aa8-fc678c8a9265",
+        "titulo": "EL pana rabbit",
+        "descripcion": "es un conejo tuerto",
+        "estado": "Pendiente",
+        "fechaLimite": "2025-04-27"
+      },
+      {
+        "id": "2eda6b55-4aa2-4316-beb2-9450bbde3bdc",
+        "titulo": "s",
+        "descripcion": "s",
         "estado": "En Progreso",
-        "fechaLimite": "2025-04-17"
+        "fechaLimite": "2025-04-25"
+      },
+      {
+        "id": "54630b23-f931-4b64-acac-76c502491bac",
+        "titulo": "hola mundo",
+        "descripcion": "aprendan a programaar",
+        "estado": "En Progreso",
+        "fechaLimite": "2025-04-26"
+      },
+      {
+        "id": "92e67f2f-e31a-4e82-bcd3-0c6f1e811e68",
+        "titulo": "a",
+        "descripcion": "sadas",
+        "estado": "En Progreso",
+        "fechaLimite": "2025-04-27"
+      },
+      {
+        "id": "529b3dd3-cb64-475b-9499-762767e123c2",
+        "titulo": "Prueba1",
+        "descripcion": "asdaaasdasdsada",
+        "estado": "En Progreso",
+        "fechaLimite": "2025-04-22"
       }
     ]
   },
@@ -33,20 +103,6 @@
         "nombre": "Sprint 122",
         "tareas": [
           {
-            "id": "188d96d9-4710-4a1e-a22d-1c482981ddc4",
-            "titulo": "asdasd",
-            "descripcion": "sdadda",
-            "estado": "En Progreso",
-            "fechaLimite": "2025-04-12"
-          },
-          {
-            "id": "04539d66-d1a3-46f7-a350-8b4fb6e9998d",
-            "titulo": "seba raton",
-            "descripcion": "rpagate una coca",
-            "estado": "Finalizado",
-            "fechaLimite": "2025-04-13"
-          },
-          {
             "id": "c5d2e920-fecf-48a1-a658-ca81accbf1ea",
             "titulo": "Terminar",
             "descripcion": "Termninar el proyecto",
@@ -54,18 +110,11 @@
             "fechaLimite": "2025-04-17"
           },
           {
-            "id": "54630b23-f931-4b64-acac-76c502491bac",
-            "titulo": "hola mundo",
-            "descripcion": "aprendan a programaar",
-            "estado": "En Progreso",
-            "fechaLimite": "2025-04-26"
-          },
-          {
-            "id": "92e67f2f-e31a-4e82-bcd3-0c6f1e811e68",
-            "titulo": "asdsa",
-            "descripcion": "sadas",
-            "estado": "Pendiente",
-            "fechaLimite": "2025-04-25"
+            "id": "9396bea0-176a-4ba5-ba73-41d9ac5244ea",
+            "titulo": "asdas",
+            "descripcion": "asdas",
+            "estado": "En Progerso",
+            "fechaLimite": "2025-05-07"
           }
         ]
       },
@@ -74,36 +123,49 @@
         "fechaInicio": "2025-04-09",
         "fechaCierre": "2025-04-11",
         "nombre": "BENDITO RUFIAN",
-        "tareas": [
-          {
-            "id": "3d146083-ca4c-44a9-a582-58c62617b8fc",
-            "titulo": "fsdfdssdfsfsdfsdfdsfsdfd",
-            "descripcion": "sdf",
-            "estado": "Finalizado",
-            "fechaLimite": "2025-04-25"
-          },
-          {
-            "id": "2eda6b55-4aa2-4316-beb2-9450bbde3bdc",
-            "titulo": "s",
-            "descripcion": "s",
-            "estado": "En Progreso",
-            "fechaLimite": "2025-04-25"
-          },
-          {
-            "id": "46d11a13-7654-43c6-9aa8-fc678c8a9265",
-            "titulo": "EL pana rabbit",
-            "descripcion": "es un conejo tuerto",
-            "estado": "Pendiente",
-            "fechaLimite": "2025-04-27"
-          },
-          {
-            "id": "8cc5cef2-07dc-42b3-a14e-9cede07f982d",
-            "titulo": "dsaasddasddadad",
-            "descripcion": "adasdddadad",
-            "estado": "Finalizado",
-            "fechaLimite": "2025-04-06"
-          }
-        ]
+        "tareas": []
+      },
+      {
+        "id": "e75fa948-181a-4e00-9a57-b2f7ab375d16",
+        "fechaInicio": "2025-04-22",
+        "fechaCierre": "2025-05-04",
+        "nombre": "asdas",
+        "tareas": []
+      },
+      {
+        "id": "c6d996cc-7e6f-4672-8899-579c0b7a6a5e",
+        "fechaInicio": "2025-04-23",
+        "fechaCierre": "2025-05-01",
+        "nombre": "prueba",
+        "tareas": []
+      },
+      {
+        "id": "85de5a78-7315-497c-aa32-9a740ed7289d",
+        "fechaInicio": "2025-04-10",
+        "fechaCierre": "2025-04-14",
+        "nombre": "prueba2",
+        "tareas": []
+      },
+      {
+        "id": "29270c07-d112-4001-b7d9-e80e5625a706",
+        "fechaInicio": "2025-04-24",
+        "fechaCierre": "2025-04-30",
+        "nombre": "prueba",
+        "tareas": []
+      },
+      {
+        "id": "4af9f4f7-306e-40bc-bfe9-2378b1991e37",
+        "fechaInicio": "2025-04-09",
+        "fechaCierre": "2025-04-27",
+        "nombre": "prueba22",
+        "tareas": []
+      },
+      {
+        "id": "8fa2c7cb-1b74-47e8-99b4-7f841dea62d1",
+        "fechaInicio": "2025-04-24",
+        "fechaCierre": "2025-04-25",
+        "nombre": "prueba111",
+        "tareas": []
       }
     ]
   }

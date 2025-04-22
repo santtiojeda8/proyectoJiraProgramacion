@@ -1,21 +1,16 @@
 import { ChangeEvent, FC, FormEvent, useState } from "react";
-import { ITarea } from "../../../types/IBacklog";
-import { generadorDeId } from "../../../utils/generadorIds";
-import styles from "./CreateTareaSprint.module.css";
+import { useTarea } from "../../../../hooks/useTarea";
+import { ITarea } from "../../../../types/IBacklog";
+import { generadorDeId } from "../../../../utils/generadorIds";
+import styles from "./ModalCreateCard.module.css";
 import Swal from "sweetalert2";
-import { useSprints } from "../../../hooks/useSprints";
-
 
 type Props = {
   handleCloseModalCreate: () => void;
-  idSprint?: string;
 };
 
-export const CreateTareaSprint: FC<Props> = ({
-  handleCloseModalCreate,
-  idSprint,
-}) => {
-  const { editarUnSprint, sprints } = useSprints();
+export const ModalCreateCard: FC<Props> = ({ handleCloseModalCreate }) => {
+  const { crearTarea } = useTarea();
 
   const [formValues, setFormValues] = useState<ITarea>({
     id: generadorDeId(),
@@ -42,13 +37,7 @@ export const CreateTareaSprint: FC<Props> = ({
       return;
     }
 
-    const sprint = sprints.find((s) => s.id === idSprint);
-    if (!sprint) return;
-
-    const tareasActualizadas = [...sprint.tareas, formValues];
-
-    editarUnSprint({ ...sprint, tareas: tareasActualizadas });
-
+    crearTarea(formValues);
     handleCloseModalCreate();
   };
 

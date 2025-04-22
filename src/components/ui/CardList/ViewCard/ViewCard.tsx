@@ -1,21 +1,24 @@
 import { FC } from "react";
 import { ITarea } from "../../../../types/IBacklog";
-import styles from "./ViewCard.module.css"; // Importa los estilos
+import styles from "./ViewCard.module.css";
 
-type ITareaCard = {
+type Props = {
   tarea: ITarea;
   handleCloseViewModal: () => void;
 };
 
-export const ViewCard: FC<ITareaCard> = ({ tarea, handleCloseViewModal }) => {
+export const ViewCard: FC<Props> = ({ tarea, handleCloseViewModal }) => {
   return (
     <div className={styles.modalOverlay} onClick={handleCloseViewModal}>
       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-        <h3>Título: {tarea.titulo}</h3>
-        <p>Descripción: {tarea.descripcion}</p>
-        <p>Estado: {tarea.estado}</p>
-        <p>Fecha límite: {tarea.fechaLimite}</p>
-        <button onClick={handleCloseViewModal}>Cerrar</button>
+        <h3><strong>Título:</strong> {tarea.titulo}</h3>
+        <p><strong>Descripción:</strong> {tarea.descripcion}</p>
+        <p><strong>Estado:</strong> {tarea.estado}</p>
+        <p><strong>Fecha límite:</strong> {tarea.fechaLimite}</p>
+
+        <button className={styles.closeButton} onClick={handleCloseViewModal}>
+          Cerrar
+        </button>
       </div>
     </div>
   );

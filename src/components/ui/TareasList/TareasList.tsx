@@ -1,15 +1,11 @@
 import { useEffect, useState } from "react";
 import { useTarea } from "../../../hooks/useTarea";
-import { tareaStore } from "../../../store/tareaStore";
 import { TareaCard } from "../CardList/TareaCard/TareaCard";
 import styles from "./TareasList.module.css";
-import { ITarea } from "../../../types/IBacklog";
-import { ModalCreateCard } from "../CardList/ModalCreateCard/ModalCreateCard";
+import { ModalCreateCard } from "../Modals/ModalCreateCard/ModalCreateCard";
 
 export const TareasList = () => {
   const { getTareas, tareas } = useTarea();
-
-  const setTareaActiva = tareaStore((state) => state.setTareaActiva);
 
   useEffect(() => {
     getTareas();
@@ -17,9 +13,7 @@ export const TareasList = () => {
 
   const [openCreateTarea , setOpenCreateTarea] = useState(false)
 
-  const handleOpenModalEdit = (tarea: ITarea) => {
-    setTareaActiva(tarea);
-  };
+ 
 
   const handleOpenCreateTarea = () => {
     setOpenCreateTarea(true)

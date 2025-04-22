@@ -30,9 +30,9 @@ export const useSprints = () => {
     }))
   );
 
-
-  const agregarTareaASprint = (idSprint: string, nuevaTarea: ITarea) => { //Es la misma funcion que la funcion de abaja, cumplen lo mismo
-    // Eliminar la tarea de cualquier sprint que ya la tenga
+  // Función para agregar una tarea a un sprint específico
+  const agregarTareaASprint = (idSprint: string, nuevaTarea: ITarea) => {
+    // Primero, eliminar la tarea de cualquier sprint que ya la tenga
     const sprintConTarea = sprints.find((sprint) =>
       sprint.tareas.some((t) => t.id === nuevaTarea.id)
     );
@@ -42,10 +42,10 @@ export const useSprints = () => {
         ...sprintConTarea,
         tareas: sprintConTarea.tareas.filter((t) => t.id !== nuevaTarea.id),
       };
-      editarSprintsArray(actualizado);
+      editarSprintsArray(actualizado); // Actualizar el sprint en el estado
     }
 
-    // Agregar la tarea al nuevo sprint
+    // Ahora agregar la tarea al nuevo sprint
     const sprintActualizado = sprints.find((s) => s.id === idSprint);
 
     if (!sprintActualizado) {
@@ -58,9 +58,10 @@ export const useSprints = () => {
       tareas: [...sprintActualizado.tareas, nuevaTarea],
     };
 
-    editarSprintsArray(sprintConNuevaTarea);
+    editarSprintsArray(sprintConNuevaTarea); // Actualizar el sprint con la nueva tarea
   };
 
+  // Función para mover una tarea a un sprint específico
   const moverTareaASprint = async (tarea: ITarea, idSprint: string) => {
     const sprintDestino = sprints.find((s) => s.id === idSprint);
     
@@ -69,6 +70,7 @@ export const useSprints = () => {
       return;
     }
 
+    // Verificar si la tarea ya existe en el sprint
     const yaExiste = sprintDestino.tareas.some((t) => t.id === tarea.id);
     if (yaExiste) {
       Swal.fire("Esta tarea ya está en el sprint seleccionado");
@@ -77,20 +79,14 @@ export const useSprints = () => {
 
     const sprintActualizado: ISprint = {
       ...sprintDestino,
-      tareas: [...sprintDestino.tareas, tarea],
+      tareas: [...sprintDestino.tareas, tarea], // Agregar la tarea al sprint
     };
 
     try {
-      await editSprint(sprintActualizado.id, sprintActualizado);
-      
-      // Esta actualiza el sprint en el store
-      editarSprintsArray(sprintActualizado);
-      
-      // Esta línea asegura que desaparece del backlog
-      eliminarTareaArray(tarea.id);
-
-      // Esto elimina la tarea que esta en el db.json
-      eliminarTareaId(tarea.id) 
+      await editSprint(sprintActualizado.id, sprintActualizado); // Editar el sprint en la base de datos
+      editarSprintsArray(sprintActualizado); // Actualizar el sprint en el estado
+      eliminarTareaArray(tarea.id); // Eliminar la tarea del backlog
+      eliminarTareaId(tarea.id); // Eliminar la tarea de la base de datos
 
       Swal.fire("Tarea movida correctamente");
     } catch (error) {
@@ -99,42 +95,47 @@ export const useSprints = () => {
     }
   };
 
+  // Función para obtener todos los sprints desde la API
   const getSprints = async () => {
     try {
       const data = await getAllSprint();
-      if (data) setArraySprint(data);
+      if (data) setArraySprint(data); // Establecer los sprints en el estado
     } catch (error) {
       console.error("Hubo un erro al obtener los sprints : ", error);
     }
   };
 
+  // Función para crear un nuevo sprint
   const crearSprint = async (nuevoSprint: ISprint) => {
-    postNuevoSprint(nuevoSprint); //Hacemos post a la base de datos
+    postNuevoSprint(nuevoSprint); // Hacer el POST a la base de datos
 
     try {
-      agregarNuevoSprint(nuevoSprint); //Actuializamos el estado
+      agregarNuevoSprint(nuevoSprint); // Actualizar el estado con el nuevo sprint
       Swal.fire("Sprint creada con éxito");
     } catch (error) {
-      eliminarSprintsArray(nuevoSprint.id!);
+      eliminarSprintsArray(nuevoSprint.id!); // Revertir cambios si ocurre un error
       console.error("Error al crear sprint ", error);
     }
   };
 
+  // Función para editar un sprint existente
   const editarUnSprint = async (sprintEditado: ISprint) => {
-    const estadoPrevio = sprints.find((el) => el.id === sprintEditado.id);
-    editSprint(sprintEditado.id, sprintEditado);
+    const estadoPrevio = sprints.find((el) => el.id === sprintEditado.id); // Guardar el estado previo del sprint
+    editSprint(sprintEditado.id, sprintEditado); // Editar el sprint en la base de datos
     try {
-      editarSprintsArray(sprintEditado);
+      editarSprintsArray(sprintEditado); // Actualizar el sprint en el estado
       Swal.fire("Sprint editada con éxito");
     } catch (error) {
-      if (estadoPrevio) editarSprintsArray(estadoPrevio);
+      if (estadoPrevio) editarSprintsArray(estadoPrevio); // Restaurar el estado previo si ocurre un error
       console.error("Error al editar sprint", error);
     }
   };
 
+  // Función para eliminar un sprint
   const eliminarSprint = async (idSprint: string) => {
-    const estadoPrevio = sprints.find((el) => el.id === idSprint);
+    const estadoPrevio = sprints.find((el) => el.id === idSprint); // Guardar el estado previo del sprint
 
+    // Confirmar la eliminación con el usuario
     const confirm = await Swal.fire({
       title: "¿Estás seguro?",
       text: "Esta acción es irreversible",
@@ -144,66 +145,81 @@ export const useSprints = () => {
       cancelButtonText: "Cancelar",
     });
 
-    if (!confirm.isConfirmed) return;
+    if (!confirm.isConfirmed) return; // Si no se confirma, no se elimina
 
-    deleteSprintById(idSprint);
+    deleteSprintById(idSprint); // Eliminar el sprint de la base de datos
 
     try {
-      eliminarSprintsArray(idSprint);
+      eliminarSprintsArray(idSprint); // Eliminar el sprint del estado
       Swal.fire("Sprint eliminada exitosamente");
     } catch (error) {
-      if (estadoPrevio) agregarNuevoSprint(estadoPrevio);
+      if (estadoPrevio) agregarNuevoSprint(estadoPrevio); // Restaurar el sprint si ocurre un error
       console.error("Error al eliminar sprint", error);
     }
   };
 
-  const eliminarTareaDesdeSprint = async (idTarea : string , idSprint : string) => {
-
-    const sprintActualizado = sprints.find(sprint => sprint.id === idSprint);
-
-    if (sprintActualizado) {
-        sprintActualizado.tareas = sprintActualizado.tareas.filter(tarea => tarea.id !== idTarea);
-    }
-    
-      try {
-        if(!sprintActualizado){
-          throw new Error("Error al eliminar la tarea del sprint")
-        }
-        await editSprint(sprintActualizado.id, sprintActualizado);
-        
-        // Esta actualiza el sprint en el store
-        editarSprintsArray(sprintActualizado);
+  // Función para eliminar una tarea de un sprint específico
+  const eliminarTareaDesdeSprint = async (idTarea: string, idSprint: string) => {
+    // Mostrar la confirmación antes de eliminar
+    const confirm = await Swal.fire({
+      title: "¿Estás seguro?",
+      text: "Esta acción es irreversible y eliminará la tarea del sprint.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Sí, eliminar",
+      cancelButtonText: "Cancelar",
+    });
   
-        Swal.fire("Tarea eliminada correctamente");
-      } catch (error) {
-        console.error("Error al eliminar tarea del sprint", error);
-        Swal.fire("Error al eliminar tarea", "", "error");
-      }
+    // Si el usuario cancela, no hacemos nada
+    if (!confirm.isConfirmed) return;
+  
+    // Si el usuario confirma, procedemos con la eliminación
+    const sprintActualizado = sprints.find(sprint => sprint.id === idSprint);
+  
+    if (sprintActualizado) {
+      sprintActualizado.tareas = sprintActualizado.tareas.filter(tarea => tarea.id !== idTarea); // Eliminar la tarea del sprint
+    }
+  
+    try {
+      if (!sprintActualizado) throw new Error("Error al eliminar la tarea del sprint");
+  
+      await editSprint(sprintActualizado.id, sprintActualizado); // Editar el sprint en la base de datos
+      editarSprintsArray(sprintActualizado); // Actualizar el sprint en el estado
+  
+      Swal.fire("Tarea eliminada correctamente");
+    } catch (error) {
+      console.error("Error al eliminar tarea del sprint", error);
+      Swal.fire("Error al eliminar tarea", "", "error");
+    }
+  };
+  
+
+  // Función para actualizar el estado de una tarea dentro de un sprint
+  const actualizarEstadoTarea = async (idTarea: string, idSprint: string, nuevoEstado: string) => {
+    const sprint = sprints.find((s) => s.id === idSprint);
+    if (!sprint) return;
+
+    // Actualizar el estado de la tarea
+    const tareasActualizadas = sprint.tareas.map((t) =>
+      t.id === idTarea ? { ...t, estado: nuevoEstado } : t
+    );
+
+    const sprintActualizado: ISprint = {
+      ...sprint,
+      tareas: tareasActualizadas,
     };
 
-    const actualizarEstadoTarea = async (idTarea: string, idSprint: string, nuevoEstado: string) => {
-      const sprint = sprints.find((s) => s.id === idSprint);
-      if (!sprint) return;
-    
-      const tareasActualizadas = sprint.tareas.map((t) =>
-        t.id === idTarea ? { ...t, estado: nuevoEstado } : t
-      );
-    
-      const sprintActualizado: ISprint = {
-        ...sprint,
-        tareas: tareasActualizadas,
-      };
-    
-      try {
-        await editSprint(sprintActualizado.id, sprintActualizado);
-        editarSprintsArray(sprintActualizado);
-        Swal.fire("Estado actualizado correctamente");
-      } catch (error) {
-        console.error("Error al actualizar estado de la tarea", error);
-        Swal.fire("Error al actualizar estado", "", "error");
-      }
-    };
+    try {
+      await editSprint(sprintActualizado.id, sprintActualizado); // Editar el sprint en la base de datos
+      editarSprintsArray(sprintActualizado); // Actualizar el sprint en el estado
+      Swal.fire("Estado actualizado correctamente");
+    } catch (error) {
+      console.error("Error al actualizar estado de la tarea", error);
+      Swal.fire("Error al actualizar estado", "", "error");
+    }
+  };
 
+  // Retornar las funciones necesarias para manejar los sprints
   return {
     sprints,
     getSprints,

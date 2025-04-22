@@ -1,26 +1,21 @@
 import { ChangeEvent, FC, FormEvent, useState } from "react";
-import { ITarea } from "../../../types/IBacklog";
-import styles from "./ModalEditTareaSprint.module.css";
-import { ISprint } from "../../../types/ISprints";
-import { useSprints } from "../../../hooks/useSprints";
-import { useParams } from "react-router-dom";
+import { ITarea } from "../../../../types/IBacklog";
+import { useTarea } from "../../../../hooks/useTarea";
+import styles from "./ModalEdtiCard.module.css";
 
-type IEditTarea = {
+type Props = {
   tarea: ITarea;
   handleCloseEditModal: () => void;
-  id?: string;
 };
 
-export const ModalEditTareaSprint: FC<IEditTarea> = ({
-  tarea,
-  handleCloseEditModal,
-}) => {
-  const { id } = useParams<{ id?: string }>();
-
+export const ModalEditCard: FC<Props> = ({ tarea, handleCloseEditModal }) => {
+  // Estado local para manejar los valores del formulario (se inicia con la tarea que llega por props)
   const [formValues, setFormValues] = useState<ITarea>(tarea);
 
-  const { editarUnSprint, sprints } = useSprints();
+  // Hook personalizado para manejar la edición de tareas
+  const { edicionTarea } = useTarea();
 
+  // Manejador para cambios en los inputs del formulario
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
@@ -28,67 +23,67 @@ export const ModalEditTareaSprint: FC<IEditTarea> = ({
     setFormValues((prev) => ({ ...prev, [name]: value }));
   };
 
+  // Manejador del envío del formulario
   const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevenir el comportamiento por defecto del formulario
 
-    if (formValues) {
-      const foundSprint = sprints.find((s) => s.id === id);
+    // Llamar la función para editar la tarea con los nuevos datos
+    edicionTarea(formValues);
 
-      if (foundSprint) {
-        const asignarCambios = foundSprint?.tareas.map((t) =>
-          t.id === formValues.id ? { ...t, ...formValues } : t
-        );
-
-        const sprintModificado: ISprint = {
-          ...foundSprint,
-          tareas: asignarCambios,
-        };
-
-        editarUnSprint(sprintModificado);
-      }
-    }
+    // Cerrar el modal después de guardar
     handleCloseEditModal();
   };
 
   return (
+    // Fondo oscuro que cierra el modal al hacer click
     <div className={styles.modalOverlay} onClick={handleCloseEditModal}>
+      {/* Contenedor principal del modal */}
       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
         <h3>Editar Tarea</h3>
         <form className={styles.form} onSubmit={handleSubmit}>
+          {/* Input para el título */}
           <label>Título:</label>
           <input
             type="text"
             name="titulo"
             value={formValues.titulo}
             onChange={handleChange}
+            required
           />
 
+          {/* Textarea para la descripción */}
           <label>Descripción:</label>
           <textarea
             name="descripcion"
             value={formValues.descripcion}
             onChange={handleChange}
-          ></textarea>
+            required
+          />
 
+          {/* Selector de estado */}
           <label>Estado:</label>
           <select
             name="estado"
             value={formValues.estado}
             onChange={handleChange}
+            required
           >
             <option value="Pendiente">Pendiente</option>
             <option value="En Progreso">En Progreso</option>
             <option value="Finalizado">Finalizado</option>
           </select>
 
+          {/* Input de fecha */}
           <label>Fecha límite:</label>
           <input
             type="date"
             name="fechaLimite"
             value={formValues.fechaLimite}
             onChange={handleChange}
+            required
           />
 
+          {/* Botones de acción */}
           <div className={styles.buttonContainer}>
             <button
               type="button"

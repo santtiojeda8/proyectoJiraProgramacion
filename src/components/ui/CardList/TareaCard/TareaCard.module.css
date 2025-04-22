@@ -135,4 +135,14 @@
   .ContainerButtons{
     margin-left: 0;
   }
+  
+  
+}
+
+.proximaAVencer {
+  border: 5px solid #ffc107; /* Amarillo */
+}
+
+.expirada {
+  border: 5px solid #dc3545; /* Rojo */
 }

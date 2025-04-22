@@ -76,4 +76,12 @@
     background-color: #F29E17;
     color: black;
   }
+  .proximaAVencer {
+    border: 5px solid #ffc107; /* Amarillo */
+  }
+  
+  .expirada {
+    border: 5px solid #dc3545; /* Rojo */
+  }
+  
   

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./SprintList.module.css";
-import { ModalCreateSprint } from "../CardList/ModalCreateSprint/ModalCreateSprint";
+import { ModalCreateSprint } from "../Modals/ModalCreateSprint/ModalCreateSprint";
 import { useSprints } from "../../../hooks/useSprints";
 import { SprintCard } from "../CardList/SprintCard/SprintCard";
 import { ISprint } from "../../../types/ISprints";
