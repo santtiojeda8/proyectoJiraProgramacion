@@ -2,13 +2,6 @@
   "backlog": {
     "tareas": [
       {
-        "id": "92e67f2f-e31a-4e82-bcd3-0c6f1e811e68",
-        "titulo": "as",
-        "descripcion": "sadas",
-        "estado": "En Progreso",
-        "fechaLimite": "2025-04-27"
-      },
-      {
         "id": "fa7fe55a-29ba-49c1-a539-1b3ea6ac8789",
         "titulo": "oscar",
         "descripcion": "medio crack",
@@ -70,6 +63,13 @@
         "descripcion": "asd",
         "estado": "Finalizado",
         "fechaLimite": "2025-04-23"
+      },
+      {
+        "id": "46d11a13-7654-43c6-9aa8-fc678c8a9265",
+        "titulo": "EL pana rabbit",
+        "descripcion": "es un conejo tuerto",
+        "estado": "Pendiente",
+        "fechaLimite": "2025-04-27"
       }
     ]
   },
@@ -96,13 +96,6 @@
             "fechaLimite": "2025-05-07"
           },
           {
-            "id": "2b910be4-272f-4d8a-98b8-8fdd66618820",
-            "titulo": "paulo",
-            "descripcion": "crack",
-            "estado": "Finalizado",
-            "fechaLimite": "2025-04-17"
-          },
-          {
             "id": "c8672923-7273-4833-b36d-83c06c005ec1",
             "titulo": "hola2",
             "descripcion": "asdasd",
@@ -117,17 +110,10 @@
             "fechaLimite": "2025-04-24"
           },
           {
-            "id": "46d11a13-7654-43c6-9aa8-fc678c8a9265",
-            "titulo": "EL pana rabbit",
-            "descripcion": "es un conejo tuerto",
-            "estado": "Pendiente",
-            "fechaLimite": "2025-04-27"
-          },
-          {
             "id": "54630b23-f931-4b64-acac-76c502491bac",
             "titulo": "hola mundo",
             "descripcion": "aprendan a programaar",
-            "estado": "Finalizado",
+            "estado": "En Progreso",
             "fechaLimite": "2025-04-26"
           }
         ]
@@ -165,6 +151,13 @@
             "descripcion": "asdaasdasdas",
             "estado": "En Progreso",
             "fechaLimite": "2025-04-25"
+          },
+          {
+            "id": "92e67f2f-e31a-4e82-bcd3-0c6f1e811e68",
+            "titulo": "as",
+            "descripcion": "sadas",
+            "estado": "En Progreso",
+            "fechaLimite": "2025-04-27"
           }
         ]
       },

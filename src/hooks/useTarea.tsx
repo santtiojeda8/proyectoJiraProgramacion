@@ -95,13 +95,14 @@ export const useTarea = () => {
 
   // Mover una tarea al backlog
   const MoverTareaBacklog = async (nuevaTarea: ITarea): Promise<boolean> => {
+
     const confirmacion = await Swal.fire({
       title: '¿Mover tarea al Backlog?',
       text: 'Esta acción enviará la tarea al Backlog.',
-      icon: 'question',
+      icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Sí, mover',
       cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Sí, mover',
       reverseButtons: true
     });
   

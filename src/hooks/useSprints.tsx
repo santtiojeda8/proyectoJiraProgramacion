@@ -30,37 +30,6 @@ export const useSprints = () => {
     }))
   );
 
-  // Función para agregar una tarea a un sprint específico
-  const agregarTareaASprint = (idSprint: string, nuevaTarea: ITarea) => {
-    // Primero, eliminar la tarea de cualquier sprint que ya la tenga
-    const sprintConTarea = sprints.find((sprint) =>
-      sprint.tareas.some((t) => t.id === nuevaTarea.id)
-    );
-
-    if (sprintConTarea) {
-      const actualizado = {
-        ...sprintConTarea,
-        tareas: sprintConTarea.tareas.filter((t) => t.id !== nuevaTarea.id),
-      };
-      editarSprintsArray(actualizado); // Actualizar el sprint en el estado
-    }
-
-    // Ahora agregar la tarea al nuevo sprint
-    const sprintActualizado = sprints.find((s) => s.id === idSprint);
-
-    if (!sprintActualizado) {
-      console.error("Sprint no encontrado");
-      return;
-    }
-
-    const sprintConNuevaTarea: ISprint = {
-      ...sprintActualizado,
-      tareas: [...sprintActualizado.tareas, nuevaTarea],
-    };
-
-    editarSprintsArray(sprintConNuevaTarea); // Actualizar el sprint con la nueva tarea
-  };
-
   // Función para mover una tarea a un sprint específico
   const moverTareaASprint = async (tarea: ITarea, idSprint: string) => {
     const sprintDestino = sprints.find((s) => s.id === idSprint);
@@ -232,7 +201,6 @@ export const useSprints = () => {
     crearSprint,
     editarUnSprint,
     eliminarSprint,
-    agregarTareaASprint,
     moverTareaASprint,
     eliminarTareaDesdeSprint,
     actualizarEstadoTarea
