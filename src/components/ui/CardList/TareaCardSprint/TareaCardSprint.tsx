@@ -44,14 +44,18 @@ export const TareaCardSprint: FC<Props> = ({ tarea }) => {
   const sendToBacklog = async () => {
     if (!id) return;
   
+    const confirmada = await MoverTareaBacklog(tarea);
+  
+    if (!confirmada) return; // Si el usuario canceló o hubo error, no hace nada más
+  
     try {
-      await MoverTareaBacklog(tarea); // Añadir al backlog
-      await eliminarTareaDesdeSprint(tarea.id, id, false); // Eliminar del sprint sin confirmación
+      await eliminarTareaDesdeSprint(tarea.id, id, false);
       Swal.fire("Tarea enviada al backlog exitosamente");
     } catch (error) {
       console.error("Error al mover la tarea al backlog", error);
     }
   };
+  
   
   // Calcular clase según la proximidad de la fecha límite
   const calcularClasePorFecha = (): string => {

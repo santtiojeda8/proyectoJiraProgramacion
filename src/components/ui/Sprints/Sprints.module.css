@@ -9,6 +9,7 @@
 .header {
     text-align: center;
     padding: 20px;
+    
 
 }
 
@@ -26,7 +27,7 @@
     display: flex;
     height: 80vh;
 
-    padding: 20px;
+    padding: 5px;
 
     /* overflow: auto; */
 }
@@ -34,14 +35,13 @@
 .column {
     background-color: #666;
     color: #fff;
-    width: 30%;
     padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
+    margin: 15px;
     display: flex;
     flex-direction: column;
     height: 70vh;
-    max-height: 60vh;
+    width: 30vw;
+    max-height: 70vh;
     overflow-y:auto ;
     text-align: center;
 }

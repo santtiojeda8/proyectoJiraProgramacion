@@ -2,34 +2,6 @@
   "backlog": {
     "tareas": [
       {
-        "id": "8a745b47-b709-434e-ac05-d576b45047f1",
-        "titulo": "asd",
-        "descripcion": "asdaasdasdas",
-        "estado": "Finalizado",
-        "fechaLimite": "2025-04-27"
-      },
-      {
-        "id": "7158f827-0904-406f-be57-a5f70045764c",
-        "titulo": "asda",
-        "descripcion": "asdasdasd",
-        "estado": "Pendiente",
-        "fechaLimite": "2025-04-03"
-      },
-      {
-        "id": "acc2a0f3-8833-41fe-91b2-ddbb308414dd",
-        "titulo": "Iron Man",
-        "descripcion": "Irona Man es de carton",
-        "estado": "Pendiente",
-        "fechaLimite": "2025-04-05"
-      },
-      {
-        "id": "bf58bf9c-1a2a-4718-b10b-417d317cf005",
-        "titulo": "pepito",
-        "descripcion": "asdasdas",
-        "estado": "Pendiente",
-        "fechaLimite": "2025-04-24"
-      },
-      {
         "id": "0e1225e1-2821-485a-afac-a30781905977",
         "titulo": "pepitoq1111",
         "descripcion": "qaaaxawqeweq",
@@ -98,6 +70,27 @@
         "descripcion": "Prueba mandar al backlog\n",
         "estado": "Finalizado",
         "fechaLimite": "2025-05-10"
+      },
+      {
+        "id": "bf58bf9c-1a2a-4718-b10b-417d317cf005",
+        "titulo": "pepito",
+        "descripcion": "asdasdas",
+        "estado": "Pendiente",
+        "fechaLimite": "2025-04-24"
+      },
+      {
+        "id": "acc2a0f3-8833-41fe-91b2-ddbb308414dd",
+        "titulo": "Iron Man",
+        "descripcion": "Irona Man es de carton",
+        "estado": "Pendiente",
+        "fechaLimite": "2025-04-05"
+      },
+      {
+        "id": "4081126d-99b8-449e-b4d2-f54d24cd8da9",
+        "titulo": "pepe",
+        "descripcion": "asd",
+        "estado": "Finalizado",
+        "fechaLimite": "2025-04-23"
       }
     ]
   },
@@ -124,60 +117,18 @@
             "fechaLimite": "2025-05-07"
           },
           {
-            "id": "70fa5f9f-2c64-42a0-9755-95b53633dd05",
-            "titulo": "pepe",
-            "descripcion": "lkj",
-            "estado": "Pendiente",
-            "fechaLimite": "2025-05-02"
-          },
-          {
-            "id": "1e554f9a-5b71-4951-a73b-6eb2e779d307",
-            "titulo": "saeba",
-            "descripcion": "crack",
-            "estado": "Pendiente",
-            "fechaLimite": "2025-04-19"
-          },
-          {
-            "id": "6b1d4635-40cd-4e07-8467-da5dd72527c0",
-            "titulo": "colo1",
-            "descripcion": "crack",
-            "estado": "En Progreso",
-            "fechaLimite": "2025-05-02"
-          },
-          {
             "id": "2b910be4-272f-4d8a-98b8-8fdd66618820",
             "titulo": "paulo",
             "descripcion": "crack",
-            "estado": "En Progreso",
+            "estado": "Finalizado",
             "fechaLimite": "2025-04-17"
           },
           {
-            "id": "fa7fe55a-29ba-49c1-a539-1b3ea6ac8789",
-            "titulo": "oscar1",
-            "descripcion": "medio crack",
-            "estado": "Pendiente",
-            "fechaLimite": "2025-04-08"
-          },
-          {
             "id": "c8672923-7273-4833-b36d-83c06c005ec1",
-            "titulo": "hola",
+            "titulo": "hola2",
             "descripcion": "asdasd",
             "estado": "Finalizado",
             "fechaLimite": "2025-04-22"
-          },
-          {
-            "id": "4081126d-99b8-449e-b4d2-f54d24cd8da9",
-            "titulo": "pepe",
-            "descripcion": "asd",
-            "estado": "Finalizado",
-            "fechaLimite": "2025-04-23"
-          },
-          {
-            "id": "cea6d86c-f5aa-4661-94f9-9486ae156374",
-            "titulo": "asdasd",
-            "descripcion": "asdasd",
-            "estado": "Finalizado",
-            "fechaLimite": "2025-05-08"
           }
         ]
       },
@@ -207,7 +158,15 @@
         "fechaInicio": "2025-04-10",
         "fechaCierre": "2025-04-14",
         "nombre": "prueba2",
-        "tareas": []
+        "tareas": [
+          {
+            "id": "8a745b47-b709-434e-ac05-d576b45047f1",
+            "titulo": "asd",
+            "descripcion": "asdaasdasdas",
+            "estado": "En Progreso",
+            "fechaLimite": "2025-04-25"
+          }
+        ]
       },
       {
         "id": "29270c07-d112-4001-b7d9-e80e5625a706",

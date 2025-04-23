@@ -94,16 +94,32 @@ export const useTarea = () => {
   };
 
   // Mover una tarea al backlog
-  const MoverTareaBacklog = async (nuevaTarea: ITarea) => {
-    agregarNuevaTarea(nuevaTarea); // Añadir la tarea al store antes de hacer la solicitud
+  const MoverTareaBacklog = async (nuevaTarea: ITarea): Promise<boolean> => {
+    const confirmacion = await Swal.fire({
+      title: '¿Mover tarea al Backlog?',
+      text: 'Esta acción enviará la tarea al Backlog.',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, mover',
+      cancelButtonText: 'Cancelar',
+      reverseButtons: true
+    });
+  
+    if (!confirmacion.isConfirmed) return false;
+  
+    agregarNuevaTarea(nuevaTarea);
     try {
-      await postNuevaTarea(nuevaTarea); // Llama a la API para mover la tarea al backlog
-      Swal.fire("Tarea Enviada exitosamente"); // Muestra un mensaje de éxito
+      await postNuevaTarea(nuevaTarea);
+      return true;
     } catch (error) {
-      eliminarTareaArray(nuevaTarea.id!); // Si ocurre un error, elimina la tarea del store
-      console.error("Error al crear tarea:", error); // Muestra error en consola si no se puede mover la tarea
+      eliminarTareaArray(nuevaTarea.id!);
+      console.error("Error al crear tarea:", error);
+      Swal.fire('Error', 'No se pudo mover la tarea al backlog.', 'error');
+      return false;
     }
   };
+  
+  
 
   // Retorna todas las funciones necesarias para manejar las tareas
   return {

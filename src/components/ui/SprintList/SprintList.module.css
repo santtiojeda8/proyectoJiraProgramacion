@@ -63,7 +63,7 @@
     /* background-color: #8A8BCE; */
     gap: 1rem;
     padding: 1rem;
-    height: 80vh;
+    max-height: 74vh;
     max-width: 100%;
     overflow-x: hidden;
     overflow-y: scroll;

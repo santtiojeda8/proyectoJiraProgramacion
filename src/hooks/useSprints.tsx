@@ -219,7 +219,6 @@ export const useSprints = () => {
     try {
       await editSprint(sprintActualizado.id, sprintActualizado); // Editar el sprint en la base de datos
       editarSprintsArray(sprintActualizado); // Actualizar el sprint en el estado
-      Swal.fire("Estado actualizado correctamente");
     } catch (error) {
       console.error("Error al actualizar estado de la tarea", error);
       Swal.fire("Error al actualizar estado", "", "error");

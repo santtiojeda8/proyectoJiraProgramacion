@@ -1,39 +1,41 @@
 .cardContainer {
   display: flex;
-  justify-content: center;
-  margin: 1rem 0;
+  /* justify-content: center; */
+  border-left: 5px solid #ffffff;
+  margin: 0.5rem 0 ;
   width: 100%;
 }
 
 .card {
   background-color: white;
   color: black;
-  padding: 10px;
-  font-size: 20px;
+  padding: 5px;
+  font-size: 15px;
   text-align: left; /* 👈 Esto asegura alineación izquierda */
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* 👈 También importante */
+  
   width: 100%;
 }
 
 
 .card p {
   margin: 0.3rem 0;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .card p strong {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 /* Estados por fecha */
 .expirada {
-  border-left: 6px solid #e74c3c;
+  border-left: 5px solid #e74c3c;
 }
 
 .proximaAVencer {
-  border-left: 6px solid #f39c12;
+  border-left: 5px solid #f39c12;
 }
 
 /* Acciones */
@@ -41,8 +43,9 @@
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  gap: 4px; /* Podés ajustar esto para que estén más o menos juntos */
-  margin-top: 8px; /* Separación del contenido de arriba */
+  gap: 2px; /* Podés ajustar esto para que estén más o menos juntos */
+  margin-top: 4px; /* Separación del contenido de arriba */
+  
 }
 
 
@@ -68,7 +71,7 @@
   color: white;
   border: none;
   border-radius: 6px;
-  /* padding: 0 0.6rem; */
+  padding: 0 0.6rem;
   font-size: 15px;
   font-weight: bold;
   height: 32px;
