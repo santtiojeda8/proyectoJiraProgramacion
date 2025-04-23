@@ -27,7 +27,30 @@
     /* text-align: center; */
     position: relative;
   }
-  
+  .form{
+    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  }
+  .form input,.form textarea, .form select{ 
+
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .form input:hover,.form textarea:hover, .form select:hover{
+    outline: none;
+    border-color: #4f46e5; /* Indigo-600 */
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  }
+  .form label{
+    text-align: left;
+    font-size:1rem ;
+  }
   /* Contenedor de botones */
   .buttonContainer {
     display: flex;

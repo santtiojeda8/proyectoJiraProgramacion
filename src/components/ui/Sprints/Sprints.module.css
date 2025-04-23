@@ -5,10 +5,18 @@
     padding: 0;
 
 }
+.title{
+    text-align: center;
+}
 
 .header {
-    text-align: center;
+    align-items: center;
     padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:1rem;
+    
     
 
 }

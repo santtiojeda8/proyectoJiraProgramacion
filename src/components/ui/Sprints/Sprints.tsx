@@ -66,8 +66,10 @@ export const Sprints: FC<Params> = () => {
   return (
     <>
       <div className={styles.back}>
+        <div className={styles.title}>
+        <h1>Nombre de la Sprint: {sprint?.nombre}</h1>
+        </div>
         <div className={styles.header}>
-          <h1>Nombre de la Sprint: {sprint?.nombre}</h1>
           <h2>Tareas de la Sprint</h2>
           <button className={styles.create_task} onClick={handleNuevaTarea}>Crear Tarea</button>
         </div>

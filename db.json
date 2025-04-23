@@ -2,29 +2,8 @@
   "backlog": {
     "tareas": [
       {
-        "id": "0e1225e1-2821-485a-afac-a30781905977",
-        "titulo": "pepitoq1111",
-        "descripcion": "qaaaxawqeweq",
-        "estado": "Finalizado",
-        "fechaLimite": "2025-04-24"
-      },
-      {
-        "id": "46d11a13-7654-43c6-9aa8-fc678c8a9265",
-        "titulo": "EL pana rabbit",
-        "descripcion": "es un conejo tuerto",
-        "estado": "Pendiente",
-        "fechaLimite": "2025-04-27"
-      },
-      {
-        "id": "54630b23-f931-4b64-acac-76c502491bac",
-        "titulo": "hola mundo",
-        "descripcion": "aprendan a programaar",
-        "estado": "En Progreso",
-        "fechaLimite": "2025-04-26"
-      },
-      {
         "id": "92e67f2f-e31a-4e82-bcd3-0c6f1e811e68",
-        "titulo": "a",
+        "titulo": "as",
         "descripcion": "sadas",
         "estado": "En Progreso",
         "fechaLimite": "2025-04-27"
@@ -129,6 +108,27 @@
             "descripcion": "asdasd",
             "estado": "Finalizado",
             "fechaLimite": "2025-04-22"
+          },
+          {
+            "id": "0e1225e1-2821-485a-afac-a30781905977",
+            "titulo": "pepitoq1111",
+            "descripcion": "qaaaxawqeweq",
+            "estado": "Finalizado",
+            "fechaLimite": "2025-04-24"
+          },
+          {
+            "id": "46d11a13-7654-43c6-9aa8-fc678c8a9265",
+            "titulo": "EL pana rabbit",
+            "descripcion": "es un conejo tuerto",
+            "estado": "Pendiente",
+            "fechaLimite": "2025-04-27"
+          },
+          {
+            "id": "54630b23-f931-4b64-acac-76c502491bac",
+            "titulo": "hola mundo",
+            "descripcion": "aprendan a programaar",
+            "estado": "Finalizado",
+            "fechaLimite": "2025-04-26"
           }
         ]
       },

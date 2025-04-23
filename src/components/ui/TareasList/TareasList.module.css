@@ -1,5 +1,6 @@
 .containerTasks {
     padding: 20px;
+    max-height: 100vh;
     
 
 }
@@ -62,6 +63,7 @@
     width: 100%;
     height: 70vh; /* Fijo o ajustable según tu layout */
     overflow-y: auto; /* Scroll vertical */
+    overflow: unset;
     overflow-x: hidden;
     border-radius: 0.6rem;
 
