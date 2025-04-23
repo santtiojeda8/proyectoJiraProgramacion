@@ -140,9 +140,9 @@
 }
 
 .proximaAVencer {
-  border: 5px solid #ffc107; /* Amarillo */
+  border-left: 5px solid #ffc107; /* Amarillo */
 }
 
 .expirada {
-  border: 5px solid #dc3545; /* Rojo */
+  border-left: 5px solid #dc3545; /* Rojo */
 }

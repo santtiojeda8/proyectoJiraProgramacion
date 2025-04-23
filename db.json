@@ -2,31 +2,10 @@
   "backlog": {
     "tareas": [
       {
-        "id": "04539d66-d1a3-46f7-a350-8b4fb6e9998d",
-        "titulo": "seba raton",
-        "descripcion": "rpagate una coca",
-        "estado": "Finalizado",
-        "fechaLimite": "2025-04-13"
-      },
-      {
-        "id": "529b3dd3-cb64-475b-9499-762767e123c2",
-        "titulo": "Prueba1",
-        "descripcion": "asdaaasdasdsada",
-        "estado": "En Progreso",
-        "fechaLimite": "2025-04-22"
-      },
-      {
-        "id": "a4301d2a-896f-473a-ab14-6c0f9f55bf00",
-        "titulo": "Prueba1",
-        "descripcion": "asdas",
-        "estado": "Pendiente",
-        "fechaLimite": "2025-05-10"
-      },
-      {
         "id": "8a745b47-b709-434e-ac05-d576b45047f1",
-        "titulo": "asda",
+        "titulo": "asd",
         "descripcion": "asdaasdasdas",
-        "estado": "Pendiente",
+        "estado": "Finalizado",
         "fechaLimite": "2025-04-27"
       },
       {
@@ -65,13 +44,6 @@
         "fechaLimite": "2025-04-27"
       },
       {
-        "id": "2eda6b55-4aa2-4316-beb2-9450bbde3bdc",
-        "titulo": "s",
-        "descripcion": "s",
-        "estado": "En Progreso",
-        "fechaLimite": "2025-04-25"
-      },
-      {
         "id": "54630b23-f931-4b64-acac-76c502491bac",
         "titulo": "hola mundo",
         "descripcion": "aprendan a programaar",
@@ -86,18 +58,46 @@
         "fechaLimite": "2025-04-27"
       },
       {
-        "id": "529b3dd3-cb64-475b-9499-762767e123c2",
-        "titulo": "Prueba1",
-        "descripcion": "asdaaasdasdsada",
+        "id": "fa7fe55a-29ba-49c1-a539-1b3ea6ac8789",
+        "titulo": "oscar",
+        "descripcion": "medio crack",
         "estado": "En Progreso",
-        "fechaLimite": "2025-04-22"
+        "fechaLimite": "2025-04-08"
       },
       {
-        "id": "70fa5f9f-2c64-42a0-9755-95b53633dd05",
-        "titulo": "pepe",
-        "descripcion": "lkj",
-        "estado": "Pendiente",
-        "fechaLimite": "2025-05-02"
+        "id": "fa7fe55a-29ba-49c1-a539-1b3ea6ac8789",
+        "titulo": "oscar",
+        "descripcion": "medio crack",
+        "estado": "En Progreso",
+        "fechaLimite": "2025-04-08"
+      },
+      {
+        "id": "fa7fe55a-29ba-49c1-a539-1b3ea6ac8789",
+        "titulo": "oscar",
+        "descripcion": "medio crack",
+        "estado": "En Progreso",
+        "fechaLimite": "2025-04-08"
+      },
+      {
+        "id": "fa7fe55a-29ba-49c1-a539-1b3ea6ac8789",
+        "titulo": "oscar",
+        "descripcion": "medio crack",
+        "estado": "En Progreso",
+        "fechaLimite": "2025-04-08"
+      },
+      {
+        "id": "fa7fe55a-29ba-49c1-a539-1b3ea6ac8789",
+        "titulo": "oscar",
+        "descripcion": "medio crack",
+        "estado": "En Progreso",
+        "fechaLimite": "2025-04-08"
+      },
+      {
+        "id": "a4301d2a-896f-473a-ab14-6c0f9f55bf00",
+        "titulo": "Prueba1",
+        "descripcion": "Prueba mandar al backlog\n",
+        "estado": "Finalizado",
+        "fechaLimite": "2025-05-10"
       }
     ]
   },
@@ -124,13 +124,6 @@
             "fechaLimite": "2025-05-07"
           },
           {
-            "id": "6242ec23-c077-4a27-a2a4-12d4c634bd18",
-            "titulo": "Hulk",
-            "descripcion": "hulk es verde",
-            "estado": "Pendiente",
-            "fechaLimite": "2025-04-26"
-          },
-          {
             "id": "70fa5f9f-2c64-42a0-9755-95b53633dd05",
             "titulo": "pepe",
             "descripcion": "lkj",
@@ -146,7 +139,7 @@
           },
           {
             "id": "6b1d4635-40cd-4e07-8467-da5dd72527c0",
-            "titulo": "colo",
+            "titulo": "colo1",
             "descripcion": "crack",
             "estado": "En Progreso",
             "fechaLimite": "2025-05-02"
@@ -160,9 +153,9 @@
           },
           {
             "id": "fa7fe55a-29ba-49c1-a539-1b3ea6ac8789",
-            "titulo": "oscar",
+            "titulo": "oscar1",
             "descripcion": "medio crack",
-            "estado": "En Progreso",
+            "estado": "Pendiente",
             "fechaLimite": "2025-04-08"
           },
           {

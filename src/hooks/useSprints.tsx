@@ -159,34 +159,41 @@ export const useSprints = () => {
   };
 
   // Función para eliminar una tarea de un sprint específico
-  const eliminarTareaDesdeSprint = async (idTarea: string, idSprint: string) => {
-    // Mostrar la confirmación antes de eliminar
-    const confirm = await Swal.fire({
-      title: "¿Estás seguro?",
-      text: "Esta acción es irreversible y eliminará la tarea del sprint.",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: "Sí, eliminar",
-      cancelButtonText: "Cancelar",
-    });
+  const eliminarTareaDesdeSprint = async (
+    idTarea: string,
+    idSprint: string,
+    confirmar: boolean = true
+  ) => {
+    if (confirmar) {
+      const confirm = await Swal.fire({
+        title: "¿Estás seguro?",
+        text: "Esta acción es irreversible y eliminará la tarea del sprint.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Sí, eliminar",
+        cancelButtonText: "Cancelar",
+      });
   
-    // Si el usuario cancela, no hacemos nada
-    if (!confirm.isConfirmed) return;
+      if (!confirm.isConfirmed) return;
+    }
   
-    // Si el usuario confirma, procedemos con la eliminación
     const sprintActualizado = sprints.find(sprint => sprint.id === idSprint);
   
     if (sprintActualizado) {
-      sprintActualizado.tareas = sprintActualizado.tareas.filter(tarea => tarea.id !== idTarea); // Eliminar la tarea del sprint
+      sprintActualizado.tareas = sprintActualizado.tareas.filter(
+        tarea => tarea.id !== idTarea
+      );
     }
   
     try {
       if (!sprintActualizado) throw new Error("Error al eliminar la tarea del sprint");
   
-      await editSprint(sprintActualizado.id, sprintActualizado); // Editar el sprint en la base de datos
-      editarSprintsArray(sprintActualizado); // Actualizar el sprint en el estado
+      await editSprint(sprintActualizado.id, sprintActualizado);
+      editarSprintsArray(sprintActualizado);
   
-      Swal.fire("Tarea eliminada correctamente");
+      if (confirmar) {
+        Swal.fire("Tarea eliminada correctamente");
+      }
     } catch (error) {
       console.error("Error al eliminar tarea del sprint", error);
       Swal.fire("Error al eliminar tarea", "", "error");

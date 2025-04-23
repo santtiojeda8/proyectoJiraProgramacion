@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { useSprints } from "../../../../hooks/useSprints";
 import { useTarea } from "../../../../hooks/useTarea";
 import { ModalEditarTareaSprint } from "../../Modals/ModalEditTareaSprint/ModalEditTareaSprint";
+import Swal from "sweetalert2";
 
 type Props = {
   tarea: ITarea;
@@ -40,12 +41,18 @@ export const TareaCardSprint: FC<Props> = ({ tarea }) => {
     }
   };
 
-  // Enviar tarea al backlog
-  const sendToBacklog = () => {
-    MoverTareaBacklog(tarea);
-    handleDeleteTarea();
+  const sendToBacklog = async () => {
+    if (!id) return;
+  
+    try {
+      await MoverTareaBacklog(tarea); // Añadir al backlog
+      await eliminarTareaDesdeSprint(tarea.id, id, false); // Eliminar del sprint sin confirmación
+      Swal.fire("Tarea enviada al backlog exitosamente");
+    } catch (error) {
+      console.error("Error al mover la tarea al backlog", error);
+    }
   };
-
+  
   // Calcular clase según la proximidad de la fecha límite
   const calcularClasePorFecha = (): string => {
     const hoy = new Date();
